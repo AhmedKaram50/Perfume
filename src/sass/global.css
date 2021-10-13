@@ -1,0 +1,53 @@
+/*
+    Start: 12/7/2021
+    End: 
+
+    Needed
+    - Country flags in languages in nav
+    - logo
+*/
+
+:root{
+    --main-font: 'Poppins', sans-serif;
+    --main-color: #fc846b;
+    --second-color: #373737
+}
+
+body{
+    font-family: var(--main-font);
+    overflow-x: hidden
+}
+
+button.main-btn a{
+    text-decoration: none;
+    color: var(--main-color)
+}
+button.main-btn{
+    width: 170px;
+    background-color: var(--second-color);
+    color: var(--main-color);
+    height: 50px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    transition: all 0.4s ease-in-out;
+    font-size: 18px;
+}
+button.main-btn:hover{
+    background-color: var(--main-color);
+    color: var(--second-color)
+}
+button.main-btn:hover a{
+    color: var(--second-color);
+}
+
+.owl-dots{
+    margin-top: 20px !important;
+}
+.owl-dots button span{
+    border-radius: 0px !important;
+}
+.owl-dots button.active span{
+    background-color: var(--main-color) !important;
+    border-radius: 0px !important;
+}
