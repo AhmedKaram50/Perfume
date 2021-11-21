@@ -1,0 +1,112 @@
+﻿$main-color: #fc846b;
+$second-color: #444;
+$third-color: #e9bfad;
+$fourth-color: #08548e;
+$bg-color: #f9fafa;
+$main-shadow: 0 10px 10px 20px #b0b8d617, 10px 10px 15px -5px #b0b8d6;
+$section-width: 70%;
+$greeen-color: #2bc155;
+$red-color: #f35757;
+$main-font: 'Poppins', sans-serif;
+$body-color: #f5f5f5;
+/* ====================== Start Global Styling ====================== */
+// Disable Input Type Number Arrows
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* ====================== End Global Styling ====================== */
+/* ====================== Start Buttons Main Styling ====================== */
+%btn {
+  font-family: $main-font;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid #0000;
+  padding: 5px 15px;
+  transition: all 0.15s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+%img-props{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+// Make Color Depend On Background Color Lightness
+@function color-depend-bg($color) {
+  @if (lightness($color) > 70) {
+    @return $main-color;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Border Radius Maker
+@function radius($state) {
+  @if ($state == "rounded") {
+    @return 50%;
+  } @else if ($state == "low") {
+    @return 4px;
+  } @else if ($state == "medium") {
+    @return 10px;
+  } @else if ($state == "high") {
+    @return 30px;
+  } @else {
+    @return 0px;
+  }
+}
+
+// Hover Transition
+@function transform-kind($kind) {
+  @if ($kind == "grow") {
+    @return scale(1.08);
+  } @else if ($kind == "shrink") {
+    @return scale(0.92);
+  } @else {
+    @return none;
+  }
+}
+
+// Buttons Generator
+@mixin make-button($bg, $size, $width, $radius, $hover) {
+  @extend %btn;
+  &:hover {
+    transform: transform-kind($hover);
+  }
+  background-color: $bg;
+  color: color-depend-bg($bg);
+  font-size: $size;
+  width: $width;
+  border-radius: radius($radius);
+}
+/* ====================== End Buttons Main Styling ====================== */
+/* ====================== Start Positioning ====================== */
+%flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ====================== End Positioning ====================== */
+/* ====================== Start Utilities ====================== */
+// Layout Generator
+%my-layout{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #000;
+}
+
+@mixin make-layout($color, $opacity) {
+  @extend %my-layout;
+  background-color: rgba($color, $opacity)
+}
+/* ====================== End Utilities ====================== */

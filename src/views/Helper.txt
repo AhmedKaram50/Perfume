@@ -1,0 +1,3 @@
+get the params of route name of product page 
+make function get product by name and exptects the name of product and return the product object
+mutate the result to the currentProduct

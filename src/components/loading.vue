@@ -1,17 +1,17 @@
 <template>
   <div class="loading">
-    <img src="../assets/loading.gif" alt="loading..">
+    <img src="../assets/loading.gif" alt="loading.." />
   </div>
 </template>
 
 <script>
 export default {
-  name: "loading"
-}
+  name: "loading",
+};
 </script>
 
 <style lang="scss" scoped>
-.loading{
+.loading {
   position: fixed;
   top: 0;
   left: 0;

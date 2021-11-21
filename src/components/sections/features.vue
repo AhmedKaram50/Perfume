@@ -36,86 +36,86 @@
       </button>
     </div>
     <div class="features-image">
-      <img src="../../assets/perfume6.png">
+      <img src="../../assets/perfume6.png" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'features'
-}
+  name: "features",
+};
 </script>
 
 <style lang="scss" scoped>
-.features{
+.features {
   padding: 110px 0;
   background-color: var(--main-color);
   font-family: var(--main-font);
   color: #fff;
   text-align: left;
   align-items: center;
-  .info{
+  .info {
     flex: 2;
     order: 2;
     padding-left: 30px;
-    .heading{
-      span{
+    .heading {
+      span {
         font-size: 22px;
         font-family: var(--main-font);
         position: relative;
         width: fit-content;
-        &::before{
-          content: '';
+        &::before {
+          content: "";
           position: absolute;
           top: 60%;
           right: -60px;
           width: 50px;
           height: 1px;
-          background: #fff
+          background: #fff;
         }
       }
-      h2{
+      h2 {
         color: #373737;
         font-weight: bold;
         margin: 20px 0 50px 0;
         font-size: 35px;
         font-family: var(--main-font);
         width: 100%;
-        line-height: 1.25
+        line-height: 1.25;
       }
     }
-    ul{
+    ul {
       list-style: none;
       text-align: left;
       padding: 0;
-      li{
+      li {
         display: flex;
         align-items: center;
         margin: 30px 0;
         font-size: 27px;
-        p{
+        p {
           margin: 0 10px;
-          font-weight: 600
+          font-weight: 600;
         }
-        svg{
+        svg {
           margin-right: 15px;
         }
       }
     }
-    button.main-btn{
+    button.main-btn {
       margin-top: 15px;
-      &:hover{
+      &:hover {
         background-color: #fff;
         color: var(--second-color);
       }
     }
   }
-  .features-image{
+  .features-image {
     flex: 2;
     order: 1;
     text-align: center;
-    img{
+    img {
       width: 55%;
       height: 100%;
       object-fit: cover;
@@ -123,19 +123,19 @@ export default {
   }
 }
 @media (max-width: 576px) {
-  .features{
+  .features {
     flex-direction: column-reverse;
     padding-inline: 25px;
     // padding: 40px 20px;
-    .info{
+    .info {
       margin-bottom: 30px;
       order: 2 !important;
       padding: 0;
-      p{
+      p {
         font-size: 18px !important;
       }
     }
-    .features-image{
+    .features-image {
       order: 1 !important;
       margin-top: 30px;
     }

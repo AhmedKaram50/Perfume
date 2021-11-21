@@ -1,0 +1,57 @@
+{
+  "_from": "@storefront-ui/shared@0.11.0-rc.2",
+  "_id": "@storefront-ui/shared@0.11.0-rc.2",
+  "_inBundle": false,
+  "_integrity": "sha512-3XUzNdMFg49IkqP4XmmVNpXjiP57bKayx4GQPvU1ogqSIb4uzd5r4rja1SjlSxs6kaPRkJT9X/KwsyiBlqLhTw==",
+  "_location": "/@storefront-ui/shared",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@storefront-ui/shared@0.11.0-rc.2",
+    "name": "@storefront-ui/shared",
+    "escapedName": "@storefront-ui%2fshared",
+    "scope": "@storefront-ui",
+    "rawSpec": "0.11.0-rc.2",
+    "saveSpec": null,
+    "fetchSpec": "0.11.0-rc.2"
+  },
+  "_requiredBy": [
+    "/@storefront-ui/vue"
+  ],
+  "_resolved": "https://registry.npmjs.org/@storefront-ui/shared/-/shared-0.11.0-rc.2.tgz",
+  "_shasum": "37f01114764323bf502ff7662cc85b969c870f7d",
+  "_spec": "@storefront-ui/shared@0.11.0-rc.2",
+  "_where": "E:\\5\\Sitse\\2021\\perfume\\node_modules\\@storefront-ui\\vue",
+  "author": {
+    "name": "Filip Rakowski"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.0.4",
+    "stylelint": "^13.3.2",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.17.0"
+  },
+  "gitHead": "407116d5b31c97911847a9017d8d2a189cc4bd16",
+  "license": "ISC",
+  "lint-staged": {
+    "*.js": "eslint --fix"
+  },
+  "main": "index.js",
+  "name": "@storefront-ui/shared",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "precommit": "lint-staged"
+  },
+  "version": "0.11.0-rc.2"
+}

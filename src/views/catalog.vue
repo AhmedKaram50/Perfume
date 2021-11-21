@@ -6,25 +6,15 @@
     <div id="category">
       <div class="navbar section">
         <div class="navbar__aside desktop-only">
-          <SfHeading :level="3" title="Categories" class="navbar__title" />
+          <SfHeading :level="3" title="All Products" class="navbar__title" />
         </div>
         <div class="navbar__main">
-          <div class="navbar__sort desktop-only">
-            <span class="navbar__label">Sort by:</span>
-            <SfComponentSelect v-model="sortBy" class="navbar__select">
-              <SfComponentSelectOption
-                v-for="option in sortByOptions"
-                :key="option.value"
-                :value="option.value"
-                class="sort-by__option"
-                >{{ option.label }}</SfComponentSelectOption
-              >
-            </SfComponentSelect>
-          </div>
           <div class="navbar__counter">
             <span class="navbar__label desktop-only">Products found: </span>
-            <span class="desktop-only">{{products.length}}</span>
-            <span class="navbar__label smartphone-only">{{products.length}}</span>
+            <span class="desktop-only">{{ products.length }}</span>
+            <span class="navbar__label smartphone-only">{{
+              products.length
+            }}</span>
           </div>
           <div class="navbar__view">
             <span class="navbar__view-label desktop-only">View</span>
@@ -53,23 +43,40 @@
       </div>
       <div class="main section">
         <div class="sidebar desktop-only">
-          <SfAccordion :open="sidebarAccordion[0].header" :show-chevron="true">
-            <SfAccordionItem
-              v-for="(accordion, i) in sidebarAccordion"
-              :key="i"
-              :header="accordion.header"
-            >
-              <template>
-                <SfList class="list">
-                  <SfListItem
-                    v-for="(item, j) in accordion.items"
-                    :key="j"
-                    class="list__item"
-                  >
-                    <SfMenuItem :label="item.label" :count="item.count" />
-                  </SfListItem>
-                </SfList>
-              </template>
+          <SfAccordion :show-chevron="true">
+            <SfAccordionItem header="Categories">
+              <SfList class="list">
+                <SfListItem
+                  v-for="(item, j) in categories"
+                  :key="j"
+                  class="list__item"
+                >
+                  <SfMenuItem
+                    :label="item.name"
+                    count="0"
+                    @click="categoryClick"
+                  />
+                </SfListItem>
+              </SfList>
+            </SfAccordionItem>
+            <SfAccordionItem header="Sort By">
+              <SfList class="list">
+                <SfListItem class="list__item">
+                  <SfMenuItem label="Latest" @click="clickSort('latest')" />
+                </SfListItem>
+                <SfListItem class="list__item">
+                  <SfMenuItem
+                    label="Price from low to high"
+                    @click="clickSort('lowFirst')"
+                  />
+                </SfListItem>
+                <SfListItem class="list__item">
+                  <SfMenuItem
+                    label="Price from high to low"
+                    @click="clickSort('highFirst')"
+                  />
+                </SfListItem>
+              </SfList>
             </SfAccordionItem>
           </SfAccordion>
         </div>
@@ -83,20 +90,19 @@
           >
             <SfProductCard
               v-for="(product, i) in products"
-              :key="product.id"
+              :key="product.name"
               :style="{ '--index': i }"
-              :title="product.title"
-              :image="require(`../assets/${product.imageName}`)"
+              :title="product.name"
+              badgeLabel="50% off"
+              :wishlistIcon="false"
+              :image="require(`../assets/${typeof product.productImage == 'string' ? product.productImage : product.productImage[0]}`)"
               image-height="200px"
               image-width="100%"
-              :regular-price="product.price.regular"
-              :special-price="product.price.special"
-              :max-rating="product.rating.max"
-              :score-rating="product.rating.score"
-              :is-in-wishlist="product.isInWishlist"
+              :regular-price="product.price + currency"
               :show-add-to-cart-button="true"
               class="products__product-card"
-              @click:wishlist="toggleWishlist(i)"
+              @click:add-to-cart="OnAddToCart(product)"
+              @click="goToProduct(product)"
             />
           </transition-group>
           <transition-group
@@ -108,19 +114,16 @@
           >
             <SfProductCardHorizontal
               v-for="(product, i) in products"
-              :key="product.id"
+              :key="product.name"
               :style="{ '--index': i }"
-              :title="product.title"
-              :description="product.description"
-              :image="require(`../assets/${product.imageName}`)"
-              :regular-price="product.price.regular"
-              :special-price="product.price.special"
-              :max-rating="product.rating.max"
-              :reviews-count="product.reviewsCount"
-              :score-rating="product.rating.score"
-              :is-in-wishlist="product.isInWishlist"
-              class="products__product-card-horizontal"
-              @click:wishlist="toggleWishlist(i)"
+              :title="product.name"
+              badgeLabel="50% off"
+              :wishlistIcon="false"
+              :image="require(`../assets/${typeof product.productImage == 'string' ? product.productImage : product.productImage[0]}`)"
+              :regular-price="product.price + currency"
+              :show-add-to-cart-button="true"
+              class="products__product-card"
+              @click:add-to-cart="OnAddToCart(product)"
             >
               <template #configuration>
                 <SfProperty
@@ -152,505 +155,132 @@
           <SfPagination
             class="products__pagination"
             :current="currentPage"
-            :total="4"
+            :total="pageCount"
             :visible="5"
             @click="
               (page) => {
                 currentPage = page;
+                console.log('aaa');
               }
             "
           />
-          <div class="products__show-on-page desktop-only">
-            <span class="products__show-on-page__label">Show on page:</span>
-            <SfSelect class="products__items-per-page">
-              <SfSelectOption
-                v-for="option in showOnPage"
-                :key="option"
-                :value="option"
-                class="products__items-per-page__option"
-              >
-                {{ option }}
-              </SfSelectOption>
-            </SfSelect>
-          </div>
         </div>
       </div>
-      <SfSidebar
-        :visible="isFilterSidebarOpen"
-        title="Filters"
-        class="sidebar-filters"
-        @close="isFilterSidebarOpen = false"
-      >
-        <div class="filters desktop-only">
-          <SfHeading
-            :level="4"
-            title="Collection"
-            class="filters__title sf-heading--left"
-          />
-          <SfFilter
-            v-for="filter in filters.collection"
-            :key="filter.value"
-            :label="filter.label"
-            :count="filter.count"
-            :selected="filter.selected"
-            class="filters__item"
-            @change="filter.selected = !filter.selected"
-          />
-          <SfHeading
-            :level="4"
-            title="Color"
-            class="filters__title sf-heading--left"
-          />
-          <div class="filters__colors">
-            <SfColor
-              v-for="filter in filters.color"
-              :key="filter.value"
-              :color="filter.color"
-              :selected="filter.selected"
-              class="filters__color"
-              @click="filter.selected = !filter.selected"
-            />
-          </div>
-          <SfHeading
-            :level="4"
-            title="Size"
-            class="filters__title sf-heading--left"
-          />
-          <SfFilter
-            v-for="filter in filters.size"
-            :key="filter.value"
-            :label="filter.label"
-            :count="filter.count"
-            :selected="filter.selected"
-            class="filters__item"
-            @change="filter.selected = !filter.selected"
-          />
-          <SfHeading
-            :level="4"
-            title="Price"
-            class="filters__title sf-heading--left"
-          />
-          <SfFilter
-            v-for="filter in filters.price"
-            :key="filter.value"
-            :label="filter.label"
-            :count="filter.count"
-            :selected="filter.selected"
-            class="filters__item"
-            @change="filter.selected = !filter.selected"
-          />
-          <SfHeading
-            :level="4"
-            title="Material"
-            class="filters__title sf-heading--left"
-          />
-          <SfFilter
-            v-for="filter in filters.material"
-            :key="filter.value"
-            :value="filter.value"
-            :label="filter.label"
-            :selected="filter.selected"
-            class="filters__item"
-            @change="filter.selected = !filter.selected"
-          />
-        </div>
-        <SfAccordion class="filters smartphone-only">
-          <SfAccordionItem
-            header="Show on page"
-            class="filters__accordion-item"
-          >
-            <template #additional-info>
-              <span class="filters__chosen"> {{ displayOnPage }} items </span>
-            </template>
-            <SfRadio
-              v-for="value in showOnPage"
-              :key="value"
-              v-model="displayOnPage"
-              :value="value"
-              :label="value"
-              class="filters__item"
-            />
-          </SfAccordionItem>
-          <SfAccordionItem header="Sort by" class="filters__accordion-item">
-            <template #additional-info>
-              <span class="filters__chosen">
-                {{ sortBy }}
-              </span>
-            </template>
-            <SfRadio
-              v-for="sort in sortByOptions"
-              :key="sort.value"
-              v-model="sortBy"
-              :value="sort.value"
-              :label="sort.label"
-              class="filters__item"
-            />
-          </SfAccordionItem>
-          <SfAccordionItem header="Category" class="filters__accordion-item">
-            <template #additional-info>
-              <span class="filters__chosen">
-                {{ category }}
-              </span>
-            </template>
-            <SfRadio
-              v-for="cat in sidebarAccordion"
-              :key="cat.header"
-              v-model="category"
-              :value="cat.header"
-              :label="cat.header"
-              class="filters__item"
-            />
-          </SfAccordionItem>
-          <SfAccordionItem header="Collection" class="filters__accordion-item">
-            <SfFilter
-              v-for="filter in filters.collection"
-              :key="filter.value"
-              :label="filter.label"
-              :count="filter.count"
-              :selected="filter.selected"
-              class="filters__item"
-              @change="filter.selected = !filter.selected"
-            />
-          </SfAccordionItem>
-          <SfAccordionItem header="Color" class="filters__accordion-item">
-            <SfFilter
-              v-for="filter in filters.color"
-              :key="filter.value"
-              :label="filter.label"
-              :color="filter.color"
-              :selected="filter.selected"
-              class="filters__item"
-              @change="filter.selected = !filter.selected"
-            />
-          </SfAccordionItem>
-          <SfAccordionItem header="Size" class="filters__accordion-item">
-            <SfFilter
-              v-for="filter in filters.size"
-              :key="filter.value"
-              :label="filter.label"
-              :count="filter.count"
-              :selected="filter.selected"
-              class="filters__item"
-              @change="filter.selected = !filter.selected"
-            />
-          </SfAccordionItem>
-          <SfAccordionItem header="Price" class="filters__accordion-item">
-            <SfFilter
-              v-for="filter in filters.price"
-              :key="filter.value"
-              :label="filter.label"
-              :count="filter.count"
-              :selected="filter.selected"
-              class="filters__item"
-              @change="filter.selected = !filter.selected"
-            />
-          </SfAccordionItem>
-          <SfAccordionItem header="Material" class="filters__accordion-item">
-            <SfFilter
-              v-for="filter in filters.material"
-              :key="filter.value"
-              :value="filter.value"
-              :label="filter.label"
-              :selected="filter.selected"
-              class="filters__item"
-              @change="filter.selected = !filter.selected"
-            />
-          </SfAccordionItem>
-        </SfAccordion>
-        <template #content-bottom>
-          <div class="filters__buttons">
-            <SfButton
-              class="sf-button--full-width"
-              @click="isFilterSidebarOpen = false"
-              >Done</SfButton
-            >
-            <SfButton
-              class="sf-button--full-width filters__button-clear"
-              @click="clearAllFilters"
-              >Clear all</SfButton
-            >
-          </div>
-        </template>
-      </SfSidebar>
     </div>
   </div>
 </template>
 <script>
 import {
   SfHeading,
-  SfSidebar,
   SfButton,
   SfList,
   SfIcon,
   SfMenuItem,
-  SfFilter,
   SfProductCard,
   SfProductCardHorizontal,
   SfPagination,
   SfAccordion,
-  SfComponentSelect,
-  SfColor,
   SfProperty,
-  SfRadio,
-  SfSelect,
 } from "@storefront-ui/vue";
+import { mapGetters, mapActions, mapMutations } from "vuex";
+import router from "../router";
+
 export default {
   name: "Category",
   components: {
     SfHeading,
     SfButton,
-    SfSidebar,
     SfIcon,
     SfList,
-    SfFilter,
     SfProductCard,
     SfProductCardHorizontal,
     SfPagination,
     SfMenuItem,
     SfAccordion,
-    SfComponentSelect,
-    SfColor,
     SfProperty,
-    SfRadio,
-    SfSelect,
   },
   data() {
     return {
+      productImageAsFile: "",
+      productImageAsUrl: "",
       currentPage: 1,
+      currency: " E£",
       sortBy: "Latest",
       isFilterSidebarOpen: false,
       isGridView: true,
       category: "Clothing",
-      displayOnPage: "40",
-      sortByOptions: [
-        {
-          value: "Latest",
-          label: "Latest",
-        },
-        {
-          value: "Price-up",
-          label: "Price from low to high",
-        },
-        {
-          value: "Price-down",
-          label: "Price from high to low",
-        },
-      ],
-      sidebarAccordion: [
-        {
-          header: "Categories",
-          items: [
-            { label: "All", count: "280" },
-            { label: "Skirts", count: "23" },
-            { label: "Sweaters", count: "54" },
-            { label: "Dresses", count: "34" },
-            { label: "T-shirts", count: "56" },
-            { label: "Pants", count: "7" },
-            { label: "Underwear", count: "12" },
-          ],
-        },
-      ],
-      showOnPage: ["20", "40", "60"],
-      products: [
-        {
-          title: "Cream Beach Bag",
-          id: 1,
-          description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "../assets/perfume7.png",
-          imageName: "perfume7.png",
-          price: { regular: "$20.00" },
-          rating: { max: 5, score: 5 },
-          reviewsCount: 8,
-          isInWishlist: true,
-        },
-        {
-          title: "Cream Beach Bag",
-          id: 2,
-          description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "assets/perfume7.png",
-          imageName: "perfume7.png",
-          price: { regular: "$50.00" },
-          rating: { max: 5, score: 4 },
-          reviewsCount: 8,
-          isInWishlist: false,
-        },
-        {
-          title: "Cream Beach Bag",
-          id: 3,
-          description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "assets/perfume7.png",
-          imageName: "perfume7.png",
-          price: { regular: "$50.00" },
-          rating: { max: 5, score: 4 },
-          reviewsCount: 8,
-          isInWishlist: false,
-        },
-        {
-          title: "Cream Beach Bag",
-          id: 4,
-          description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "..assets/perfume7.png",
-          imageName: "perfume7.png",
-          price: { regular: "$50.00" },
-          rating: { max: 5, score: 4 },
-          reviewsCount: 8,
-          isInWishlist: false,
-        },
-        {
-          title: "Cream Beach Bag",
-          id: 5,
-          description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "assets/perfume7.png",
-          imageName: "perfume7.png",
-          price: { regular: "$50.00" },
-          rating: { max: 5, score: 4 },
-          reviewsCount: 8,
-          isInWishlist: false,
-        },
-        {
-          title: "Cream Beach Bag",
-          id: 6,
-          description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "assets/perfume7.png",
-          imageName: "perfume4.png",
-          price: { regular: "$50.00" },
-          rating: { max: 5, score: 4 },
-          reviewsCount: 8,
-          isInWishlist: false,
-        },
-        {
-          title: "Cream Beach Bag",
-          id: 7,
-          description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "assets/perfume7.png",
-          imageName: "perfume5.png",
-          price: { regular: "$50.00" },
-          rating: { max: 5, score: 4 },
-          reviewsCount: 6,
-          isInWishlist: false,
-        },
-        {
-          title: "Cream Beach Bag",
-          id: 8,
-          description:
-            "Find stunning women cocktail and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands.",
-          image: "assets/perfume7.png",
-          imageName: "perfume6.png",
-          price: { regular: "$50.00" },
-          rating: { max: 5, score: 4 },
-          reviewsCount: 8,
-          isInWishlist: false,
-        },
-      ],
-      filters: {
-        collection: [
-          {
-            label: "Summer fly",
-            value: "summer-fly",
-            count: "10",
-            selected: false,
-          },
-          {
-            label: "Best 2018",
-            value: "best-2018",
-            count: "23",
-            selected: false,
-          },
-          {
-            label: "Your choice",
-            value: "your-choice",
-            count: "54",
-            selected: false,
-          },
-        ],
-        color: [
-          { label: "Red", value: "red", color: "#990611", selected: false },
-          { label: "Black", value: "black", color: "#000000", selected: false },
-          {
-            label: "Yellow",
-            value: "yellow",
-            color: "#DCA742",
-            selected: false,
-          },
-          { label: "Blue", value: "blue", color: "#004F97", selected: false },
-          { label: "Navy", value: "navy", color: "#656466", selected: false },
-        ],
-        size: [
-          { label: "Size 2 (XXS)", value: "xxs", count: "10", selected: false },
-          { label: "Size 4-6 (XS)", value: "xs", count: "23", selected: false },
-          { label: "Size 8-10 (S)", value: "s", count: "54", selected: false },
-          {
-            label: "Size 12-14 (M)",
-            value: "m",
-            count: "109",
-            selected: false,
-          },
-          { label: "Size 16-18 (L)", value: "l", count: "23", selected: false },
-          {
-            label: "Size 20-22(XL)",
-            value: "xl",
-            count: "12",
-            selected: false,
-          },
-          {
-            label: "Size 24-26 (XXL)",
-            value: "xxl",
-            count: "2",
-            selected: false,
-          },
-        ],
-        price: [
-          {
-            label: "Under $200",
-            value: "under-200",
-            count: "23",
-            selected: false,
-          },
-          {
-            label: "Under $300",
-            value: "under-300",
-            count: "54",
-            selected: false,
-          },
-        ],
-        material: [
-          { label: "Cotton", value: "coton", count: "33", selected: false },
-          { label: "Silk", value: "silk", count: "73", selected: false },
-        ],
-      },
+      displayOnPage: "2",
+      categoryFilter: this.$route.query.category,
+      isProductLoaded: false
     };
   },
   methods: {
-    updateFilter() {},
-    clearAllFilters() {
-      const filters = Object.keys(this.filters);
-      filters.forEach((name) => {
-        const prop = this.filters[name];
-        prop.forEach((value) => {
-          value.selected = false;
-        });
+    OnAddToCart(product) {
+      this.addProductToCart(product);
+    },
+    categoryClick(e) {
+      this.categoryFilter = e.target.parentElement.querySelector(
+        ".sf-menu-item__label"
+      ).textContent;
+      this.getProductsFromApi(this.categoryFilter);
+      router.push({
+        path: "catalog",
+        query: { category: this.categoryFilter },
       });
+      console.log(this.$route.query.category);
     },
-    toggleWishlist(index) {
-      this.products[index].isInWishlist = !this.products[index].isInWishlist;
+    clickSort(sortType) {
+      if (sortType === "lowFirst")
+        this.products.sort((prev, product) =>
+          prev.price < product.price ? -1 : 1
+        );
+      else if (sortType === "highFirst")
+        this.products.sort((prev, product) =>
+          prev.price > product.price ? -1 : 1
+        );
+      else this.getProductsFromApi(this.categoryFilter);
     },
+    ChangePage() {
+      this.changePage({ start: 1, end: 4 });
+    },
+    goToProduct(productName) {
+      const current = this.products.filter((product) => product.name == productName.name)[0];
+      this.setCurrentProduct(current)
+      this.$router.push({path: `catalog/${productName.name}`,})
+    },
+    ...mapActions([
+      "addProductToCart",
+      "getProductsFromApi",
+      "addNewProduct",
+      "getCategoriesFromApi",
+      "addNewCategory",
+      "changePage",
+    ]),
+    ...mapMutations(["setCurrentProduct"]),
   },
   computed: {
-  }
+    pageCount() {
+      return Math.ceil(
+        this.AllProducts.length / this.productsPageInfo.productsInOnePageCount
+      );
+    },
+    ...mapGetters([
+      "products",
+      "categories",
+      "AllProducts",
+      "productsPageInfo",
+    ]),
+  },
+  created() {
+    this.getProductsFromApi(this.categoryFilter);
+    this.getCategoriesFromApi();
+  },
+  
 };
 </script>
 
 <style lang="scss" scoped>
 /* Me */
-
-
 .header {
   height: 210px;
   background: url("../assets/land.jpg") center;
@@ -659,8 +289,8 @@ export default {
   align-items: center;
   justify-content: center;
   position: relative;
- 
-  &::before{
+
+  &::before {
     content: "";
     position: absolute;
     top: 0;
@@ -668,7 +298,6 @@ export default {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-
   }
   h2 {
     font-size: 50px;
@@ -679,15 +308,37 @@ export default {
   }
 }
 
-#category .navbar__sort{
-  margin: 0 !important
+.navbar__counter {
+  margin: 0 !important;
+  margin-right: auto !important;
 }
 
-@media (min-width: 1024px){
+.sf-product-card .sf-product-card__price .sf-price__regular {
+  color: #fc846b !important;
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+.sf-price {
+  &__regular {
+    display: none;
+  }
+}
+
+.products .products__grid .sf-product-card .sf-product-card__price {
+  display: none !important;
+}
+
+#category .navbar__sort {
+  margin: 0 !important;
+}
+
+@media (min-width: 1024px) {
   #category .products__grid {
     gap: 3%;
   }
-  #category .products__product-card{
+  #category .products__product-card {
     flex: 1 1 22%;
     margin-bottom: 3%;
   }
@@ -944,61 +595,13 @@ export default {
     }
   }
 }
-.filters {
-  &__title {
-    --heading-title-font-size: var(--font-size--xl);
-    margin: var(--spacer-xl) 0 var(--spacer-base) 0;
-    &:first-child {
-      margin: calc(var(--spacer-xl) + var(--spacer-base)) 0 var(--spacer-xs) 0;
-    }
-  }
-  &__colors {
-    display: flex;
-  }
-  &__color {
-    margin: var(--spacer-xs) var(--spacer-xs) var(--spacer-xs) 0;
-  }
-  &__chosen {
-    color: var(--c-text-muted);
-    font-weight: var(--font-weight--normal);
-    font-family: var(--font-family--secondary);
-    position: absolute;
-    right: var(--spacer-xl);
-  }
-  &__item {
-    --radio-container-padding: 0 var(--spacer-sm) 0 var(--spacer-xl);
-    --radio-background: transparent;
-    --filter-label-color: var(--c-secondary-variant);
-    --filter-count-color: var(--c-secondary-variant);
-    --checkbox-padding: 0 var(--spacer-sm) 0 var(--spacer-xl);
-    padding: var(--spacer-sm) 0;
-    border-bottom: 1px solid var(--c-light);
-    &:last-child {
-      border-bottom: 0;
-    }
-    @include for-desktop {
-      --checkbox-padding: 0;
-      margin: var(--spacer-sm) 0;
-      border: 0;
-      padding: 0;
-    }
-  }
-  &__accordion-item {
-    --accordion-item-content-padding: 0;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    width: 100vw;
-  }
-  &__buttons {
-    margin: var(--spacer-sm) 0;
-  }
-  &__button-clear {
-    --button-background: var(--c-light);
-    --button-color: var(--c-dark-variant);
-    margin: var(--spacer-xs) 0 0 0;
-  }
+
+.sf-pagination.products__pagination {
+  --pagination-item-width: 24px;
+  --button-width: 24px;
+}
+
+.products__pagination {
+  justify-content: center !important;
 }
 </style>

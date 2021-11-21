@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <welcome />
-    <first-product v-for="product in getWelcomeProducts" :key="product.id" 
+    <first-product
+      v-for="product in welcomePosts"
+      :key="product.id"
       :span="product.span"
       :title="product.title"
       :paragraph="product.paragraph"
@@ -9,8 +11,12 @@
     />
     <features />
     <testimonials />
-    <video-baner @videoTurnOn="updateVideoOpen($event)"/>
-    <video-holder vidSrc="https://www.youtube.com/embed/WEW69QU9KBE" :startAt="180" v-if="videoOn" />
+    <video-baner @videoTurnOn="updateVideoOpen($event)" />
+    <video-holder
+      vidSrc="https://www.youtube.com/embed/WEW69QU9KBE"
+      :startAt="180"
+      v-if="videoOn"
+    />
     <welcome-blogs />
     <!-- <loading v-if="loading"/> -->
   </div>
@@ -25,6 +31,7 @@ import videoBaner from "../components/sections/video.vue";
 import videoHolder from "../components/video-holder.vue";
 import welcomeBlogs from "../components/sections/welcome-blogs.vue";
 // import loading from "../components/loading.vue";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Home",
@@ -38,31 +45,28 @@ export default {
     welcomeBlogs,
     // loading
   },
-  data: function() {
+  data: function () {
     return {
       videoOn: false,
       // loading: true
-    }
+    };
   },
-  created () {
+  created() {
     this.$store.state.isHome = true;
   },
   computed: {
-    getWelcomeProducts() {
-      return this.$store.state.welcomeProducts;
-    },
-    isHome () {
-      return this.$store.state.isHome
-    }
+    ...mapGetters(["isSigned", "welcomePosts"]),
   },
   methods: {
-    updateVideoOpen (state) {
+    updateVideoOpen(state) {
       this.videoOn = state;
-    }
+    },
+    ...mapActions(["getCurrentUserData"]),
   },
-  
+  mounted() {
+    this.getCurrentUserData();
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

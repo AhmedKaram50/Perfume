@@ -6,9 +6,14 @@
         <h2>Perfume Smell Blog</h2>
       </div>
       <div class="row">
-        <div class="col-lg-4" v-for="blog in getWelcomeBlogs" :key="blog.id">
-          <blog :title="blog.title" :author="blog.author" :date="blog.date" :imageName="blog.imageName">
-            {{blog.text}}
+        <div class="col-lg-4" v-for="blog in blogs" :key="blog.id">
+          <blog
+            :title="blog.title"
+            :author="blog.author"
+            :date="blog.date"
+            :imageName="blog.imageName"
+          >
+            {{ blog.text }}
           </blog>
         </div>
       </div>
@@ -18,32 +23,31 @@
 
 <script>
 import blog from "../blog.vue";
+import { mapGetters } from "vuex";
 
 export default {
-  name: 'welcome-blogs',
+  name: "welcome-blogs",
   components: {
-    blog
+    blog,
   },
   computed: {
-    getWelcomeBlogs () {
-      return this.$store.state.welcomeBlogs;
-    }
-  }
-}
+    ...mapGetters(["blogs"])
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-.welcome-blogs{
+.welcome-blogs {
   padding: 100px 0;
   font-family: var(--main-font);
-  .heading{
-    span{
+  .heading {
+    span {
       font-size: 20px;
       font-family: var(--main-font);
       position: relative;
       width: fit-content;
-      &::before{
-        content: '';
+      &::before {
+        content: "";
         position: absolute;
         right: calc(50% - 25px);
         top: -20px;
@@ -52,7 +56,7 @@ export default {
         background: var(--main-color);
       }
     }
-    h2{
+    h2 {
       color: var(--main-color);
       font-weight: bold;
       margin: 20px 0 100px 0;
@@ -63,11 +67,11 @@ export default {
     }
   }
 }
-.col-lg-4{
+.col-lg-4 {
   padding: 0 20px;
 }
-@media (max-width: 576px){
-  .col-lg-4:not(:last-child){
+@media (max-width: 576px) {
+  .col-lg-4:not(:last-child) {
     margin-bottom: 50px;
   }
 }

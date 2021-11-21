@@ -1,0 +1,1059 @@
+﻿@import "config";
+
+// @font-face {
+//   font-family: "Cairo";
+//   src: url("fonts/Cairo-regular.ttf") format("truetype");
+// }
+body {
+  background-color: #f5f5f5;
+  font-family: $main-font;
+}
+
+span.category {
+  padding: 3px 10px;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+span.category.green {
+  background-color: #1dd1a1;
+}
+span.category.red {
+  background-color: #ff6b6b;
+}
+span.category.blue {
+  background-color: #0abde3;
+}
+section {
+  min-height: 88vh;
+  display: none;
+}
+.container-fluid.my {
+  padding: 0 100px;
+}
+/* ===================== Start Login Page ===================== */
+.logo-holder{
+  text-align: center;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  top: 80px;
+  img{
+    width: 180px;
+    // border-radius: 50%;
+  }
+}
+.login {
+  overflow: hidden;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+  -moz-transition: -moz-transform 300ms, box-shadow 300ms;
+  transition: transform 300ms, box-shadow 300ms;
+  box-shadow: 5px 10px 10px rgb(2 128 144 / 20%);
+  direction: rtl;
+  font-family: "Cairo", sans-serif;
+  h4 {
+    margin-top: 0;
+    color: $main-color;
+    font-size: 20px;
+  }
+  input {
+    font-family: "Asap", sans-serif;
+    display: block;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background: #ffffff;
+    width: 560px;
+    color: #444;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    margin: 30px 0px;
+    font-family: "Cairo", sans-serif;
+    outline: none;
+  }
+  button {
+    @include make-button($main-color, 15px, 100%, "low", "none");
+    height: 50px;
+  }
+}
+/* ===================== End Login Page ===================== */
+/* ===================== Start Navbar ===================== */
+nav {
+  .navbar-brand {
+    width: 68px;
+    margin-left: 50px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  ul.navbar-nav {
+    > li {
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      > a {
+        font-size: 17px;
+        font-weight: bold;
+        padding: 20px !important;
+        text-decoration: none !important;
+      }
+      > a.active {
+        color: $main-color;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.btn-group .more {
+  text-decoration: none;
+  color: $main-color;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 20px;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-size: 16px;
+}
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: $main-color !important;
+}
+.bg-light {
+  background-color: #fff !important;
+  box-shadow: $main-shadow;
+}
+ul.dropdown-menu li {
+  text-align: right;
+  padding: 0 5px;
+}
+ul.dropdown-menu li a {
+  font-size: 13px;
+}
+/* ===================== End Navbar ===================== */
+/* ===================== Start Admin Home Page (start page) ===================== */
+.home-page {
+  padding-top: 120px;
+  .logo-holder {
+    width: 600px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .info {
+    text-align: center;
+    h4 {
+      font-size: 60px;
+      margin: 20px 0 30px 0;
+      color: #444;
+      color: $main-color;
+    }
+    .t-numbers {
+      gap: 40px;
+      font-size: 40px;
+      font-weight: bold;
+      color: $main-color;
+    }
+  }
+  a {
+    text-decoration: none;
+    display: block;
+    @include make-button($main-color, 22px, 200px, "low", "grow");
+    margin: 0 auto;
+    padding-block: 15px;
+  }
+}
+/* ===================== End Admin Home Page ===================== */
+/* ===================== Start Admin Tables Styling ===================== */
+.data-table {
+  margin-top: 0;
+  .heading {
+    padding: 35px 10px;
+    padding-top: 0;
+    .left i.fa-plus {
+      background-color: #042954;
+      height: 45px;
+      width: 45px;
+      color: #fff;
+      text-align: center;
+      line-height: 45px;
+      position: relative;
+      top: 16px;
+      left: -5px;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    h4 {
+      font-size: 24px;
+      font-weight: bold;
+      color: $main-color;
+    }
+    .search-input {
+      span {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        border-radius: 50%;
+        display: block;
+        text-align: center;
+        position: relative;
+        top: 44px;
+        left: 5px;
+        i {
+          color: $main-color;
+        }
+      }
+      input#mySearch {
+        direction: rtl;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.54);
+        border: 0;
+        height: 50px;
+        padding: 8px 8px 8px 50px;
+        width: 280px;
+        background: #ffffff;
+        transition: background 0.2s, width 0.2s;
+        font-family: var(--main-font);
+        outline: none;
+        padding: 0 20px;
+      }
+      select {
+        top: 17px;
+        height: 45px;
+        position: relative;
+        height: 50px !important;
+      }
+    }
+  }
+  .table-holder {
+    text-align: center;
+    direction: rtl;
+    table {
+      width: 100%;
+      // border-radius: 15px;
+      // overflow: hidden;
+      // box-shadow: $main-shadow;
+      thead {
+        background-color: #fff;
+        padding: 10px;
+      }
+      tr {
+        th {
+          background-color: $main-color;
+          color: #fff;
+          i {
+            transform: rotate(90deg);
+            margin-right: 5px;
+            font-size: 15px;
+          }
+        }
+        td {
+          &:nth-child(2) {
+            color: #444;
+            a {
+              text-decoration: none;
+            }
+          }
+          span.category.level {
+            font-size: 16px;
+          }
+          span.percent {
+            border-radius: 50%;
+            font-weight: bold;
+            background-color: #e91e63;
+            font-size: 14px;
+            padding: 5px;
+            width: 40px;
+            line-height: 30px;
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
+          }
+          ul.categories {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            gap: 20px;
+            li {
+              list-style: none;
+              padding: 0;
+              margin-bottom: 0;
+            }
+          }
+          button {
+            background: none;
+            border: none;
+            color: #0d6efd;
+          }
+          ul.dropdown-menu {
+            direction: rtl;
+            text-align: right;
+            li.dropdown-item {
+              font-size: 14px;
+              color: #444;
+            }
+            li.delete {
+              background-color: #ff6b6b;
+              a {
+                color: #fff;
+              }
+              &:hover a {
+                background-color: #ff6b6b !important;
+              }
+            }
+          }
+          a.pay {
+            @include make-button($main-color, 15px, "auto", "low", "grow");
+          }
+          i.fa-check {
+            background-color: $greeen-color;
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: radius("rounded");
+          }
+          .form-check-input[type="checkbox"] {
+            accent-color: #042954 !important;
+            height: 22px;
+            width: 22px;
+          }
+        }
+      }
+      tr:nth-child(even) {
+        background-color: #04295408;
+      }
+    }
+  }
+}
+
+.data-table.degree {
+  .form-control {
+    width: 20% !important;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+/* ===================== End Admin Tables Styling ===================== */
+/* ===================== Start Forms Styling ===================== */
+.form-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  h4 {
+    color: #042954;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  form {
+    box-shadow: $main-shadow;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 4px;
+    margin-top: 30px;
+    h4 {
+      color: #042954;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    input.form-control {
+      height: 45px;
+    }
+    select.form-select {
+      height: 45px;
+    }
+    > div > label {
+      margin-top: 20px;
+      color: #444;
+    }
+    a.add {
+      float: left;
+      line-height: 3.3;
+      text-decoration: none;
+    }
+    .ckeck-holder {
+      margin-left: 20px;
+      label {
+        margin-right: 5px;
+        color: #444;
+      }
+    }
+    button {
+      margin-top: 35px;
+      background-color: $main-color;
+      border: $main-color;
+      // width: 100%;
+      height: 45px;
+      &:hover {
+        background-color: $main-color;
+      }
+    }
+    .levels {
+      margin-top: 35px;
+      label {
+        margin: 10px 0 0 6px;
+        font-size: 15px;
+        color: #444;
+        border-color: #ced4da;
+        &:hover {
+          color: #fff;
+          background-color: $main-color;
+          border-color: #ced4da;
+        }
+      }
+    }
+  }
+}
+#flatPickr {
+  background-color: #fff !important;
+}
+
+.modal input.form-control,
+select.form-select {
+  height: 45px !important;
+}
+.modal-footer {
+  justify-content: flex-start;
+}
+.btn-primary {
+  background-color: $main-color;
+  border-color: $main-color;
+  &:hover {
+    background-color: $main-color;
+    border-color: $main-color;
+  }
+}
+.btn-secondary {
+  background-color: #ff6b6b;
+  border-color: #ff6b6b;
+  &:hover {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+  }
+}
+.form-holder.back-none {
+  form {
+    background-color: $body-color;
+    box-shadow: none;
+  }
+}
+/* ===================== End Forms Styling ===================== */
+/* ===================== Start Dashboard Card Styling ===================== */
+.dashboard-cards {
+  padding: 100px 0;
+  .card {
+    background-color: $main-color;
+    color: #fff;
+    border-radius: 6px;
+    margin-top: 25px;
+    box-shadow: $main-shadow;
+    .info {
+      .img {
+        width: 70px;
+        height: 70px;
+        margin-left: 30px;
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        padding: 15px;
+        img {
+          @extend %img-props;
+        }
+      }
+      .text {
+        h5 {
+          font-weight: bold;
+          font-size: 18px;
+          margin-bottom: 2px;
+        }
+        span {
+          font-weight: bold;
+          font-size: 26px;
+        }
+      }
+    }
+    .link {
+      margin-top: 25px;
+      a {
+        text-decoration: none;
+        color: #fff;
+        i {
+          font-size: 12px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+/* ===================== End Dashboard Card Styling ===================== */
+/* ===================== Start Teacher List Styling ===================== */
+.list {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 150px);
+  .list-group {
+    padding: 0;
+    h5 {
+      background-color: #042954;
+      color: #fff;
+      padding: 20px 25px;
+      margin-bottom: 6px;
+    }
+    li {
+      padding: 20px 30px;
+      color: #444 !important;
+      // transition: all 0.5s ease-in-out;
+      margin-bottom: 6px;
+      &:hover {
+        background-color: rgba($main-color, 0.05);
+      }
+    }
+  }
+}
+/* ===================== End Teacher List Styling ===================== */
+/* ===================== Start Footer Styling ===================== */
+footer {
+  position: relative;
+  bottom: 15px;
+  right: 15px;
+  a {
+    text-decoration: none;
+    color: $red-color;
+    font-weight: bold;
+  }
+}
+/* ===================== End Footer Styling ===================== */
+/* ===================== Start Profile Styling ===================== */
+.profile {
+  .header {
+    $header-height: 300px;
+    background: url("../Images/bg-1.jpg");
+    background-position: center;
+    background-size: cover;
+    height: $header-height;
+    position: relative;
+    z-index: 55;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .profile-pic {
+      width: 220px;
+      height: 220px;
+      // position: absolute;
+      // top: 110px;
+      // left: calc(50% - 110px);
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #fff;
+      margin: 0 auto;
+      transform: translateY(calc($header-height / 2));
+      img {
+        @extend %img-props;
+      }
+    }
+    h4 {
+      position: relative;
+      top: calc(($header-height / 2) + 7px);
+      color: #042954;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    &:before {
+      content: "";
+      @include make-layout(#000, 0.4);
+    }
+  }
+}
+/* ===================== End Profile Styling ===================== */
+.help-page {
+  width: 65%;
+  margin: auto;
+}
+
+.help-page .info {
+  height: 0px;
+}
+
+.help-page .about {
+  position: relative;
+  margin-top: 40px;
+}
+
+.help-page .about img {
+  width: 120px;
+  position: relative;
+  top: -18px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.help-page .about p {
+  line-height: 2.2;
+  color: #606060;
+}
+
+.help-page .logo {
+  text-align: center;
+}
+
+.help-page .logo .logo-holder {
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.help-page .logo .logo-holder img {
+  width: 92%;
+  height: 100%;
+}
+
+.help-page .info h3 {
+  font-size: 23px;
+  position: relative;
+  top: -140px;
+  color: #004aad;
+}
+
+.help-page ul {
+  padding: 0;
+  list-style: none;
+  position: relative;
+  padding-bottom: 180px;
+}
+
+.help-page ul li {
+  margin-bottom: 8px;
+}
+
+.help-page ul li .help-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 18px 20px;
+  cursor: pointer;
+}
+
+.help-page ul li .help-heading h3 {
+  font-size: 20px;
+  margin-bottom: 0px;
+  color: $main-color;
+}
+
+.help-page ul li .help-heading i {
+  color: $main-color;
+}
+
+.help-page ul li .content {
+  background-color: $main-color;
+  padding: 20px;
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 2;
+  font-size: 17px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.help-page .contact {
+  padding-bottom: 100px;
+}
+
+.help-page .content ul {
+  padding: 0;
+}
+
+.help-page ul li .content .logo-icon {
+  text-align: center;
+  width: 125px;
+  height: 125px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 15px auto;
+}
+
+.help-page ul li .content .logo-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.help-page .contact h3 {
+  text-align: center;
+  font-size: 25px;
+}
+
+.help-page .contact ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.help-page ul li a {
+  color: #fff;
+}
+
+.help-page .rec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+}
+
+.help-page .rec ul li {
+  margin: 0;
+  color: var(--main-color);
+}
+
+.help-page .rec img {
+  width: 100px;
+  position: absolute;
+  right: -125px;
+}
+
+.contact {
+  background-color: #fff;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #606060;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 55;
+}
+
+.contact img {
+  width: 60px;
+  position: absolute;
+  right: 240px;
+}
+
+.contact ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  gap: 20px;
+  align-items: center;
+}
+
+.contact ul li {
+  background-color: #2a2a2a;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact ul li i {
+  transition: all 0.3s ease-in-out;
+}
+
+.contact ul li a {
+  color: #fff;
+}
+
+.contact ul li:hover {
+  transform: rotate(360deg);
+}
+.contact ul li:nth-child(1):hover {
+  background-color: #3b5998;
+}
+.contact ul li:nth-child(2):hover {
+  background-color: #00aced;
+}
+.contact ul li:nth-child(3):hover {
+  background-color: #ff0084;
+}
+.contact ul li:nth-child(4):hover {
+  background-color: #cb2027;
+}
+.contact ul li:nth-child(5):hover {
+  background-color: #dd4b39;
+}
+
+.contact .copy-wright a {
+  text-decoration: none;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.contact .phone {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.contact .phone span i {
+  transform: rotate(90deg);
+  margin-right: 10px;
+  font-size: 14px;
+  color: var(--fourth-color);
+}
+/* ===================== Start Time Table Styling ===================== */
+.time-table-holder {
+  padding-bottom: 100px;
+  .heading{
+    h3{
+      margin-bottom: 30px;
+      color: $main-color;
+      font-size: 24px;
+      font-weight: bold
+    }
+  }
+}
+
+$accent-base: #8eeec0;
+$cutty-sark: #546e7a;
+$porcelain: #eceff1;
+$accents: (
+  pinksing: adjust-hue($accent-base, -180deg),
+  orangesing: adjust-hue($accent-base, -120deg),
+  greensing: adjust-hue($accent-base, -60deg),
+  cyansing: $accent-base,
+  bluesing: adjust-hue($accent-base, 60deg),
+  purplesing: adjust-hue($accent-base, 120deg),
+);
+
+@function make-gradient($color) {
+  @return linear-gradient(135deg, $color, adjust-hue($color, 40deg));
+}
+
+@mixin make-tiles {
+  @each $name, $value in $accents {
+    .accent-#{$name}-gradient {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background: make-gradient($value);
+      transition: 0.2s ease box-shadow, 0.2s ease transform;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      h5{
+        font-size: 18px;
+        color: $fourth-color;
+        font-weight: bold;
+      }
+      span{
+        font-size: 14px;
+        color: $fourth-color;
+        font-weight: bold;
+      }
+      &:hover {
+        box-shadow: 0 20px 30px 0 transparentize($value, 0.7);
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+.timetable {
+  @include make-tiles;
+  display: grid;
+  grid-template-areas:
+    ". week"
+    "time content";
+  grid-template-columns: 120px;
+  grid-template-rows: 60px;
+  box-shadow: inset 1px 0 0 #eceff1, inset 0 1px 0 0 #eceff1;
+  border-right: 1px solid #e5e9eb;
+  border-bottom: 1px solid #e5e9eb;
+  // width: 100vw;
+  height: 80vh;
+  .weekend {
+    background: lighten($porcelain, 5%);
+    color: lighten($cutty-sark, 20%);
+  }
+  .week-names {
+    grid-area: week;
+    display: grid;
+    // 7 days a week
+    grid-template-columns: repeat(7, 1fr);
+    text-transform: uppercase;
+    font-size: 12px;
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      box-shadow: inset 1px 0 0 $porcelain;
+      color: $main-color;
+    }
+  }
+  .time-interval {
+    grid-area: time;
+    display: grid;
+    // 6 time intervals
+    grid-template-rows: repeat(6, 1fr);
+    font-size: 14px;
+    & > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      box-shadow: inset 0 1px 0 0 $porcelain;
+      color: $main-color;
+    }
+  }
+  .content {
+    grid-area: content;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    & > div {
+      box-shadow: inset 1px 0 0 $porcelain, inset 0 1px 0 0 $porcelain;
+    }
+  }
+}
+// .timetable {
+//   display: grid;
+//   grid-template-areas: ". week" "time content";
+//   grid-template-columns: 120px;
+//   grid-template-rows: 60px;
+//   width: 100vw;
+//   height: 100vh;
+// }
+// .timetable .accent-pink-gradient {
+//   display: flex;
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(135deg, #ee8ebc, #eea08e);
+//   transition: 0.2s ease box-shadow, 0.2s ease transform;
+// }
+// .timetable .accent-pink-gradient:hover {
+//   box-shadow: 0 20px 30px 0 rgba(238, 142, 188, 0.3);
+//   transform: scale(1.05);
+// }
+// .timetable .accent-orange-gradient {
+//   display: flex;
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(135deg, #eec08e, #dcee8e);
+//   transition: 0.2s ease box-shadow, 0.2s ease transform;
+// }
+// .timetable .accent-orange-gradient:hover {
+//   box-shadow: 0 20px 30px 0 rgba(238, 192, 142, 0.3);
+//   transform: scale(1.05);
+// }
+// .timetable .accent-green-gradient {
+//   display: flex;
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(135deg, #bcee8e, #8eeea0);
+//   transition: 0.2s ease box-shadow, 0.2s ease transform;
+// }
+// .timetable .accent-green-gradient:hover {
+//   box-shadow: 0 20px 30px 0 rgba(188, 238, 142, 0.3);
+//   transform: scale(1.05);
+// }
+// .timetable .accent-cyan-gradient {
+//   display: flex;
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(135deg, #8eeec0, #8edcee);
+//   transition: 0.2s ease box-shadow, 0.2s ease transform;
+// }
+// .timetable .accent-cyan-gradient:hover {
+//   box-shadow: 0 20px 30px 0 rgba(142, 238, 192, 0.3);
+//   transform: scale(1.05);
+// }
+// .timetable .accent-blue-gradient {
+//   display: flex;
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(135deg, #8ebcee, #a08eee);
+//   transition: 0.2s ease box-shadow, 0.2s ease transform;
+// }
+// .timetable .accent-blue-gradient:hover {
+//   box-shadow: 0 20px 30px 0 rgba(142, 188, 238, 0.3);
+//   transform: scale(1.05);
+// }
+// .timetable .accent-purple-gradient {
+//   display: flex;
+//   width: 100%;
+//   height: 100%;
+//   background: linear-gradient(135deg, #c08eee, #ee8edc);
+//   transition: 0.2s ease box-shadow, 0.2s ease transform;
+// }
+// .timetable .accent-purple-gradient:hover {
+//   box-shadow: 0 20px 30px 0 rgba(192, 142, 238, 0.3);
+//   transform: scale(1.05);
+// }
+// .timetable .weekend {
+//   background: #fbfbfc;
+//   color: #87a1ad;
+// }
+// .timetable .week-names {
+//   grid-area: week;
+//   display: grid;
+//   grid-template-columns: repeat(7, 1fr);
+//   text-transform: uppercase;
+//   font-size: 12px;
+// }
+// .timetable .week-names > div {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 100%;
+//   height: 100%;
+//   box-shadow: inset 1px 0 0 #eceff1;
+// }
+// .timetable .time-interval {
+//   grid-area: time;
+//   display: grid;
+//   grid-template-rows: repeat(6, 1fr);
+//   font-size: 14px;
+// }
+// .timetable .time-interval > div {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   width: 100%;
+//   height: 100%;
+//   box-shadow: inset 0 1px 0 0 #eceff1;
+// }
+// .timetable .content {
+//   grid-area: content;
+//   display: grid;
+//   grid-template-rows: repeat(6, 1fr);
+//   grid-template-columns: repeat(7, 1fr);
+// }
+// .timetable .content > div {
+//   box-shadow: inset 1px 0 0 #eceff1, inset 0 1px 0 0 #eceff1;
+// }
+/* ===================== End Time Table Styling ===================== */
