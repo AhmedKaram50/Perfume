@@ -246,7 +246,7 @@ body {
   background-color: #f2f6f9 !important;
 }
 
-@import "../../Sass/config";
+@import "../../sass/config";
 .dashboard-cards {
   font-family: var(--main-font);
   padding: 30px 0;
