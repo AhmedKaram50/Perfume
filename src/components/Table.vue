@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <div class="heading d-flex justify-content-between align-items-end">
         <div class="right">
-          <h4>Users Informations</h4>
+          <h4>{{title}}</h4>
         </div>
         <div class="left d-flex justify-content-center align-items-center">
           <router-link :to="addLink"> <fa-icon :icon="['fas', 'plus']" /> </router-link>
@@ -38,7 +38,7 @@
 
 <script>
 export default {
-  props: ["tableDataObj", "headings", "addLink"],
+  props: ["tableDataObj", "headings", "addLink", "title"],
 };
 </script>
 

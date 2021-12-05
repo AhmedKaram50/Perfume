@@ -1,0 +1,135 @@
+.sf-icon {
+  position: var(--icon-position, relative);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: var(--icon-width, var(--icon-size, 1.625rem));
+  height: var(--icon-height, var(--icon-size, 1.625rem));
+  background: transparent;
+  fill: var(--icon-color, var(--c-black));
+}
+
+.sf-icon svg,
+.sf-icon img {
+  width: inherit;
+  height: inherit;
+}
+
+.sf-icon__badge {
+  position: absolute;
+  top: var(--icon-badge-top, 0);
+  right: var(--icon-badge-right, 0);
+}
+
+.sf-icon.color-white {
+  --icon-color: var(--c-white);
+}
+
+.sf-icon.color-black {
+  --icon-color: var(--c-black);
+}
+
+.sf-icon.color-primary {
+  --icon-color: var(--c-primary);
+}
+
+.sf-icon.color-primary-variant {
+  --icon-color: var(--c-primary-variant);
+}
+
+.sf-icon.color-dark-secondary {
+  --icon-color: var(--_c-dark-secondary);
+}
+
+.sf-icon.color-green-primary {
+  --icon-color: var(--_c-green-primary);
+}
+
+.sf-icon.color-green-secondary {
+  --icon-color: var(--_c-green-secondary);
+}
+
+.sf-icon.color-gray-primary {
+  --icon-color: var(--_c-gray-primary);
+}
+
+.sf-icon.color-gray-secondary {
+  --icon-color: var(--_c-gray-secondary);
+}
+
+.sf-icon.color-light-primary {
+  --icon-color: var(--_c-light-primary);
+}
+
+.sf-icon.color-light-secondary {
+  --icon-color: var(--_c-light-secondary);
+}
+
+.sf-icon.color-red-primary {
+  --icon-color: var(--_c-red-primary);
+}
+
+.sf-icon.color-red-secondary {
+  --icon-color: var(--_c-red-secondary);
+}
+
+.sf-icon.color-yellow-primary {
+  --icon-color: var(--_c-yellow-primary);
+}
+
+.sf-icon.color-yellow-secondary {
+  --icon-color: var(--_c-yellow-secondary);
+}
+
+.sf-icon.color-blue-primary {
+  --icon-color: var(--_c-blue-primary);
+}
+
+.sf-icon.color-blue-secondary {
+  --icon-color: var(--_c-blue-secondary);
+}
+
+.sf-icon.size-xxs {
+  --icon-size: 1rem;
+}
+
+.sf-icon.size-xs {
+  --icon-size: 1.4rem;
+}
+
+.sf-icon.size-sm {
+  --icon-size: 1.625rem;
+}
+
+.sf-icon.size-md {
+  --icon-size: 1.8rem;
+}
+
+.sf-icon.size-lg {
+  --icon-size: 2rem;
+}
+
+.sf-icon.size-xl {
+  --icon-size: 2.2rem;
+}
+
+.sf-icon.size-xxl {
+  --icon-size: 2.5rem;
+}
+
+.sf-icon.size-xl3 {
+  --icon-size: 2.8rem;
+}
+
+.sf-icon.size-xl4 {
+  --icon-size: 3.25rem;
+}
+/*# sourceMappingURL=SfIcon.css.map */

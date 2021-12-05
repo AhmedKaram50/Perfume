@@ -1,0 +1,6 @@
+.sf-cimage:not([alt]), .sf-cimage[alt=""] {
+  outline-color: red;
+  outline-width: 1px;
+  outline-style: dashed;
+}
+/*# sourceMappingURL=SfCimage.css.map */

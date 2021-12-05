@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,SAAS,CAAC;EACR,OAAO,EAAE,YAAY;EACrB,UAAU,EAAE,UAAU;EACtB,KAAK,EAAE,kBAAkB;EACzB,SAAS,EAAE,sBAAsB;EACjC,MAAM,EAAE,mBAAmB;EAC3B,UAAU,EAAE,uBAAuB;EACnC,OAAO,EAAE,uDAAuD;EAChE,UAAU,EAAE,yCAAyC;EACrD,MAAM,EAAE,mBAAmB;EAC3B,aAAa,EAAE,0BAA0B;EACzC,KAAK,EAAE,kCAAkC;EACzC,UAAU,EAAE,+BAA+B;EGQ3C,IAAI,EAAE,iNAGL;CHqBF;;AAxBE,AAAD,qBAAa,CAAC;EACZ,aAAa,CAAA,KAAC;CACf;;AACA,AAAD,iBAAS,CAAC;EACR,iBAAiB,CAAA,QAAC;EAClB,kBAAkB,CAAA,QAAC;EACnB,eAAe,CAAA,sBAAC;EAChB,qBAAqB,CAAA,sCAAC;EACtB,kBAAkB,CAAA,gBAAC;EACnB,iBAAiB,CAAA,qBAAC;EAClB,mBAAmB,CAAA,EAAC;EACpB,mBAAmB,CAAA,4BAAC;CACrB;;AAhCH,AAmCI,SAnCK,AAmCJ,YAAY,CAAK;EAChB,kBAAkB,CAAA,cAAC;CACpB;;AArCL,AAmCI,SAnCK,AAmCJ,YAAY,CAAK;EAChB,kBAAkB,CAAA,eAAC;CACpB;;AArCL,AAmCI,SAnCK,AAmCJ,cAAc,CAAG;EAChB,kBAAkB,CAAA,iBAAC;CACpB;;AArCL,AAmCI,SAnCK,AAmCJ,gBAAgB,CAAC;EAChB,kBAAkB,CAAA,mBAAC;CACpB;;AArCL,AAmCI,SAnCK,AAmCJ,YAAY,CAAK;EAChB,kBAAkB,CAAA,eAAC;CACpB;;AArCL,AAmCI,SAnCK,AAmCJ,WAAW,CAAM;EAChB,kBAAkB,CAAA,cAAC;CACpB;;AArCL,AAmCI,SAnCK,AAmCJ,WAAW,CAAM;EAChB,kBAAkB,CAAA,cAAC;CACpB;;AArCL,AAmCI,SAnCK,AAmCJ,cAAc,CAAG;EAChB,kBAAkB,CAAA,iBAAC;CACpB;;AArCL,AAmCI,SAnCK,AAmCJ,cAAc,CAAG;EAChB,kBAAkB,CAAA,iBAAC;CACpB;;AArCL,AAmCI,SAnCK,AAmCJ,aAAa,CAAI;EAChB,kBAAkB,CAAA,gBAAC;CACpB;;AExBH,MAAM,EAAE,SAAS,EAAE,MAAM;EF2BtB,AAAD,iBAAS,CAAC;IACR,eAAe,CAAA,sBAAC;GACjB",
+    "sources": [
+        "../src/storefrontUI/styles/styles/components/atoms/SfBadge.scss",
+        "../src/storefrontUI/styles/styles/_helpers.scss",
+        "../src/storefrontUI/styles/styles/helpers/_breakpoints.scss",
+        "../src/storefrontUI/styles/styles/helpers/_typography.scss",
+        "../src/storefrontUI/styles/styles/helpers/_layout.scss",
+        "../src/storefrontUI/styles/styles/helpers/_colors.scss",
+        "../src/storefrontUI/styles/styles/helpers/_sizes.scss"
+    ],
+    "names": [],
+    "file": "SfBadge.css"
+}

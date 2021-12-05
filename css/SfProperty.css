@@ -1,0 +1,48 @@
+.sf-property {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: var(--property-color, var(--c-text));
+}
+
+.sf-property__name {
+  margin: var(--property-name-margin, 0 var(--spacer-xs) 0 0);
+  color: var(--property-name-color, var(--c-secondary-variant));
+  text-transform: var(--property-name-text-transform);
+  font: var(--property-name-font, var(--property-name-font-weight, var(--font-weight--normal)) var(--property-name-font-size, var(--font-size--base))/var(--property-name-font-line-height, 1.2) var(--property-name-font-family, var(--font-family--secondary)));
+}
+
+.sf-property__name::after {
+  content: var(--property-name-content, ":");
+}
+
+.sf-property__value {
+  color: var(--property-value-color);
+  font: var(--property-value-font, var(--property-value-font-weight, var(--font-weight--semibold)) var(--property-value-font-size, var(--font-size--base))/var(--property-value-font-line-height, 1.2) var(--property-value-font-family, var(--font-family--secondary)));
+}
+
+.sf-property--large {
+  --property-name-font-size: var(--font-size--lg);
+  --property-name-font-weight: var(--font-weight--medium);
+  --property-value-font-size: var(--font-size--lg);
+  --property-value-font-weight: var(--font-weight--semibold);
+}
+
+.sf-property--full-width {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.sf-property--value-in-middle .sf-property__name,
+.sf-property--value-in-middle .sf-property__value {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.sf-property--without-suffix {
+  --property-name-content: "";
+}
+/*# sourceMappingURL=SfProperty.css.map */

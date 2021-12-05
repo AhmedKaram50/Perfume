@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-cards">
-    <div class="container">
+    <div class="container" v-if="isProductLoaded">
       <h3 class="title">Statistics</h3>
       <div class="row">
         <div
@@ -19,8 +19,10 @@
               </div>
             </div>
             <div class="link">
-              <a href="#"
-                >Go to {{ card.nameId }} <fa-icon :icon="['fas', 'chevron-right']"/></a>
+              <router-link :to="{ name: card.nameId }"
+                >Go to {{ card.nameId }}
+                <fa-icon :icon="['fas', 'chevron-right']"
+              /></router-link>
             </div>
           </div>
         </div>
@@ -174,12 +176,12 @@ export default {
           nameId: "users",
         },
         {
-          title: "Posts Count",
+          title: "Products Count",
           urlTitle: "go to users",
           url: "/users",
           count: 100,
           icon: "02.png",
-          nameId: "posts",
+          nameId: "products",
         },
         {
           title: "Categories Count",
@@ -222,22 +224,63 @@ export default {
           nameId: "categories",
         },
       ],
+      labels: []
     };
   },
   methods: {
-    ...mapActions(["getAllCounts"]),
+    ...mapActions(["getAllCounts", "getProductsFromApi"]),
   },
   computed: {
     myStyle() {
       return {};
     },
-    ...mapGetters(["counts", "isInformationLoaded"]),
+    ...mapGetters(["counts", "isInformationLoaded", "products", "isProductLoaded"]),
   },
   mounted() {
     // this.renderChart(this.chartData, this.chartOptions);
     this.getAllCounts();
+    console.log(this.counts);
+    console.log(this.products)
+    console.log(this.isProductLoaded)
   },
-  created() {},
+  created() {
+    const prices = []
+    console.log(this.products)
+    for (let product of this.products) {
+      this.labels.push(product.name.split(" ")[0])
+      if (product.price != 9000 && product.price != 4000) {
+        prices.push(product.price)
+      } else prices.push(500)
+    }
+    this.getProductsFromApi("all")
+    this.chartDataData = {
+      labels: this.labels,
+      datasets: [
+        {
+          label: "Product Prices",
+          data: prices,
+          backgroundColor: [
+            "#fc846b",
+            "#40739e",
+            "#fc846b",
+            "#40739e",
+            "#fc846b",
+            "#40739e",
+            "#fc846b",
+            "#40739e",
+            "#fc846b",
+            "#40739e",
+            "#fc846b",
+            "#40739e",
+          ],
+          borderColor: "#444",
+          borderSkipped: "start",
+          borderWidth: "2",
+        },
+      ],
+    };
+    console.log(this.isProductLoaded)
+  },
 };
 </script>
 

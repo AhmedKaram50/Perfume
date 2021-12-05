@@ -1,0 +1,152 @@
+.sf-product-card-horizontal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: var(--product-card-horizontal-padding, var(--spacer-xs));
+  background-color: var(--product-card-horizontal-background, var(--c-white));
+  --property-value-font-weight: var(--font-weight--normal);
+}
+
+.sf-product-card-horizontal__link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.sf-product-card-horizontal__link--image {
+  display: block;
+  line-height: 0;
+}
+
+.sf-product-card-horizontal__image-wrapper {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 var(--product-card-horizontal-image-width, 5.3125rem);
+          flex: 0 0 var(--product-card-horizontal-image-width, 5.3125rem);
+  position: relative;
+}
+
+.sf-product-card-horizontal__image-wrapper:hover {
+  --product-card-horizontal-image-opacity: 1;
+  --product-card-horizontal-image-even-opacity: 1;
+}
+
+.sf-product-card-horizontal__image, .sf-product-card-horizontal__picture {
+  -webkit-transition: var(--product-card-horizontal-image-transition, opacity 150ms ease-in-out);
+  transition: var(--product-card-horizontal-image-transition, opacity 150ms ease-in-out);
+  opacity: var(--product-card-horizontal-image-opacity);
+}
+
+.sf-product-card-horizontal__image:nth-child(even), .sf-product-card-horizontal__picture:nth-child(even) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: var(--product-card-horizontal-image-even-opacity, 0);
+}
+
+.sf-product-card-horizontal__main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: var(--product-card-horizontal-flex-direction, column);
+          flex-direction: var(--product-card-horizontal-flex-direction, column);
+  padding: var(--product-card-horizontal-main-padding, 0 0 0 var(--spacer-sm));
+}
+
+.sf-product-card-horizontal__details, .sf-product-card-horizontal__actions-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.sf-product-card-horizontal__actions-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: var(--product-card-horizontal-actions-wrapper, flex-start);
+      -ms-flex-align: var(--product-card-horizontal-actions-wrapper, flex-start);
+          align-items: var(--product-card-horizontal-actions-wrapper, flex-start);
+  margin: var(--product-card-horizontal-actions-wrapper-margin, var(--spacer-sm) 0 0 0);
+}
+
+.sf-product-card-horizontal__title {
+  margin: 0;
+  color: var(--c-link);
+  color: var(--product-card-horizontal-title-color, var(--c-link));
+  font: var(--product-card-horizontal-title-font, var(--product-card-horizontal-title-font-weight, var(--font-weight--medium)) var(--product-card-horizontal-title-font-size, var(--font-size--base))/var(--product-card-horizontal-title-font-line-height, 1.6) var(--product-card-horizontal-title-font-family, var(--font-family--secondary)));
+}
+
+.sf-product-card-horizontal__description {
+  margin: var(--product-card-horizontal-description-margin, var(--spacer-sm) 0);
+  color: var(--product-card-horizontal-description-color, var(--c-text-muted));
+  font: var(--product-card-horizontal-description-font, var(--product-card-horizontal-description-font-weight, var(--font-weight--normal)) var(--product-card-horizontal-description-font-size, var(--font-size--base))/var(--product-card-horizontal-description-font-line-height, 1.6) var(--product-card-horizontal-description-font-family, var(--font-family--primary)));
+}
+
+.sf-product-card-horizontal__configuration {
+  margin: var(--product-card-horizontal-configuration-margin, 0);
+}
+
+.sf-product-card-horizontal__reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: var(--product-card-horizontal-review-margin, auto 0 0 0);
+  font: var(--product-card-horizontal-reviews-font, var(--product-card-horizontal-reviews-font-weight, var(--font-weight--light)) var(--product-card-horizontal-reviews-font-size, var(--font-size--sm))/var(--product-card-horizontal-reviews-font-line-height, 1.4) var(--product-card-horizontal-reviews-font-family, var(--font-family--secondary)));
+}
+
+.sf-product-card-horizontal__reviews-count {
+  --button-font-size: var(--font-size--sm);
+  --button-font-weight: var(--font-weight--light);
+  color: var(--c-text);
+  text-decoration: none;
+  margin: 0 0 0 var(--spacer-xs);
+}
+
+.sf-product-card-horizontal__actions {
+  margin: var(--product-card-horizontal-actions-margin, 0);
+}
+
+.sf-product-card-horizontal__add-to-cart {
+  margin: var(--product-card-horizontal-add-to-cart-margin, 0);
+}
+
+.sf-product-card-horizontal__wishlist-icon {
+  --icon-color: var(--c-dark-variant);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sf-product-card-horizontal:hover {
+  -webkit-box-shadow: var(--product-card-horizontal-box-shadow, 0px 4px 11px rgba(29, 31, 34, 0.1));
+          box-shadow: var(--product-card-horizontal-box-shadow, 0px 4px 11px rgba(29, 31, 34, 0.1));
+}
+
+@media (min-width: 1024px) {
+  .sf-product-card-horizontal {
+    --product-card-horizontal-flex-direction: row;
+    --product-card-horizontal-image-width: 8.75rem;
+    --product-card-horizontal-padding: var(--spacer-xs) var(--spacer-sm) var(--spacer-xs) var(--spacer-xs);
+    --product-card-horizontal-actions-wrapper: flex-end;
+    --product-card-horizontal-review-margin: var(--spacer-xs) 0 0 0;
+    --product-card-horizontal-configuration-margin: auto 0 var(--spacer-xs) 0;
+    --product-card-horizontal-add-to-cart-margin: auto 0 0 0;
+    --product-card-horizontal-actions-margin: var(--spacer-base) 0 0 0;
+    --product-card-horizontal-actions-wrapper-margin: 0;
+    --product-card-horizontal-title-font-weight: var(--font-weight--normal);
+  }
+}
+/*# sourceMappingURL=SfProductCardHorizontal.css.map */

@@ -1,0 +1,86 @@
+.sf-textarea {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: var(--textarea-position, relative);
+}
+
+.sf-textarea textarea {
+  resize: var(--textarea-resize, auto);
+  color: var(--textarea-color);
+  font: var(--textarea-font, var(--textarea-font-weight, var(--font-weight--normal)) var(--textarea-font-size, var(--font-size--base))/var(--textarea-font-line-height, 1) var(--textarea-font-family, var(--font-family--secondary)));
+  height: var(--textarea-height);
+  width: var(--textarea-width);
+  padding: var(--textarea-padding, var(--spacer-sm));
+  border: var(--textarea-border, var(--textarea-border-style, solid) var(--textarea-border-color, var(--c-link)));
+  border-width: var(--textarea-border-width, 1px);
+}
+
+.sf-textarea textarea:focus {
+  --textarea-border-color: var(--c-primary);
+}
+
+.sf-textarea textarea:focus ~ * {
+  --textarea-label-padding: 0;
+  --textarea-label-color: var(--c-primary);
+  --textarea-label-transform: translate3d(0, -1rem, 0);
+  --textarea-label-font-size: var(--font-size--xs);
+}
+
+.sf-textarea textarea:disabled {
+  --textarea-border-color: var(--c-text-disabled);
+  --textarea-color: var(--c-text-disabled);
+}
+
+.sf-textarea textarea:disabled ~ * {
+  --textarea-label-color: var(--c-text-disabled);
+}
+
+.sf-textarea textarea:required ~ * {
+  --textarea-label-required: " *";
+}
+
+.sf-textarea textarea:placeholder-shown ~ * {
+  --textarea-label-padding: 0;
+  --textarea-label-transform: translate3d(0, -1rem, 0);
+}
+
+.sf-textarea__label {
+  font: var(--textarea-label-font, var(--textarea-label-font-weight, var(--font-weight--normal)) var(--textarea-label-font-size, var(--font-size--base))/var(--textarea-label-font-line-height, 1) var(--textarea-label-font-family, var(--font-family--secondary)));
+  position: var(--textarea-label-position, absolute);
+  padding: var(--textarea-label-padding, var(--spacer-sm));
+  top: var(--textarea-label-top);
+  bottom: var(--textarea-label-bottom);
+  left: var(--textarea-label-left, 0);
+  right: var(--textarea-label-right);
+  -webkit-transform: var(--textarea-label-transform);
+          transform: var(--textarea-label-transform);
+  color: var(--textarea-label-color, var(--c-link));
+  -webkit-transition: var(--textarea-label-transition, transform 150ms linear, font-size 150ms linear);
+  transition: var(--textarea-label-transition, transform 150ms linear, font-size 150ms linear);
+}
+
+.sf-textarea__label::after {
+  content: var(--textarea-label-required);
+  --textarea-label-color: var(--c-primary);
+}
+
+.sf-textarea--has-text {
+  --textarea-border-color: var(--c-text);
+  --textarea-color: var(--c-text);
+  --textarea-label-top: 0;
+  --textarea-label-font-size: var(--font-size--xs);
+  --textarea-label-transform: translate3d(0, -1rem, 0);
+  --textarea-label-padding: 0;
+}
+
+.sf-textarea--invalid {
+  --textarea-border-color: var(--c-danger);
+  --textarea-label-color: var(--c-danger);
+}
+
+.sf-textarea__error-message {
+  color: var(--textarea-error-message-color, var(--c-danger));
+  min-height: calc(var(--font-size--xs) * 1.2);
+  font: var(--textarea-error-message-font, var(--textarea-error-message-font-weight, var(--font-weight--medium)) var(--textarea-error-message-font-size, var(--font-size--xs))/var(--textarea-error-message-font-line-height, 1.2) var(--textarea-error-message-font-family, var(--font-family--secondary)));
+}
+/*# sourceMappingURL=SfTextarea.css.map */

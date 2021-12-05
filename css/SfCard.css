@@ -1,0 +1,45 @@
+.sf-card {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.sf-card__image {
+  display: block;
+  --image-width: 100%;
+}
+
+.sf-card__details {
+  background: var(--c-light);
+  text-align: center;
+  padding: var(--spacer-sm) var(--spacer-sm) var(--spacer-lg);
+}
+
+.sf-card__title {
+  padding: 0 0 var(--spacer-sm);
+  --heading-title-font-weight: var(--font-weight--bold);
+  --heading-title-font-size: var(--h3-font-size);
+  --heading-title-font-family: var(--font-family--secondary);
+}
+
+.sf-card__description {
+  margin: 0;
+  color: var(--c-link);
+  font: var(--card-description-font, var(--card-description-font-weight, var(--font-weight--normal)) var(--card-description-font-size, var(--font-size--base))/var(--card-description-font-line-height, 1.6) var(--card-description-font-family, var(--font-family--primary)));
+}
+
+.sf-card__action {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -1.5625rem);
+          transform: translate(-50%, -1.5625rem);
+}
+
+@media (min-width: 1024px) {
+  .sf-card {
+    width: 23.375rem;
+    --heading-title-font-weight: var(--font-weight--semibold);
+  }
+}
+/*# sourceMappingURL=SfCard.css.map */

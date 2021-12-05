@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,UAAU,CAAC;EACT,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CAeb;;AAdE,AAAD,mBAAU,CAAC;EACT,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,CAAC;EACN,IAAI,EAAE,CAAC;EACP,KAAK,EAAE,CAAC;EACR,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,gDAAgD;CAC7D;;AACA,AAAD,mBAAU,CAAC;EACT,MAAM,EAAE,8CAA8C;CACvD",
+    "sources": [
+        "../src/storefrontUI/styles/styles/components/atoms/SfLoader.scss",
+        "../src/storefrontUI/styles/styles/_helpers.scss",
+        "../src/storefrontUI/styles/styles/helpers/_breakpoints.scss",
+        "../src/storefrontUI/styles/styles/helpers/_typography.scss",
+        "../src/storefrontUI/styles/styles/helpers/_layout.scss",
+        "../src/storefrontUI/styles/styles/helpers/_colors.scss",
+        "../src/storefrontUI/styles/styles/helpers/_sizes.scss"
+    ],
+    "names": [],
+    "file": "SfLoader.css"
+}

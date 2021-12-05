@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,WAAW,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,OAAO,EAAE,8CAA8C;EACvD,UAAU,EAAE,iCAAiC;CAyD9C;;AAxDE,AAAD,kBAAQ,CAAC;EACP,MAAM,EAAE,8BAA8B;EACtC,KAAK,EAAE,yCAAyC;EGclD,IAAI,EAAE,wPAGL;CHWA;;AA9BA,AAUC,kBAVM,AAUL,GAAG,CAAC;EACH,SAAS,EAAE,mDAAmD;EAC9D,WAAW,EAAE,4DAA4D;CAC1E;;AAbF,AAcC,kBAdM,AAcL,GAAG,CAAC;EACH,SAAS,EAAE,mDAAmD;EAC9D,WAAW,EAAE,8DAA8D;CAC5E;;AAjBF,AAkBC,kBAlBM,AAkBL,GAAG,CAAC;EACH,SAAS,EAAE,mDAAmD;EAC9D,WAAW,EAAE,4DAA4D;CAC1E;;AArBF,AAsBC,kBAtBM,AAsBL,GAAG,CAAC;EACH,SAAS,EAAE,mDAAmD;EAC9D,WAAW,EAAE,4DAA4D;CAC1E;;AAzBF,AA0BC,kBA1BM,AA0BL,GAAG,CAAC;EACH,SAAS,EAAE,mDAAmD;EAC9D,WAAW,EAAE,4DAA4D;CAC1E;;AAEF,AAAD,wBAAc,CAAC;EACb,MAAM,EAAE,uDAAuD;EAC/D,KAAK,EAAE,+CAA+C;EGjBxD,IAAI,EAAE,uRAGL;CHsBA;;AEhCD,MAAM,EAAE,SAAS,EAAE,MAAM;EFb3B,AAAA,WAAW,CAAC;IA+CR,iBAAiB,CAAA,EAAC;IAClB,gBAAgB,CAAA,EAAC;IACjB,oBAAoB,CAAA,OAAC;GAWxB;;;AATE,AAAD,sBAAY,CAAC;EI5Cb,MAAM,EAAE,qGAAiE;EACzE,YAAY,EAAE,sCAA2C;CJ6CxD;;AACA,AAAD,iBAAO,CAAC;EACN,oBAAoB,CAAA,KAAC;CACtB;;AACA,AAAD,kBAAQ,CAAC;EACP,oBAAoB,CAAA,MAAC;CACtB",
+    "sources": [
+        "../src/storefrontUI/styles/styles/components/atoms/SfHeading.scss",
+        "../src/storefrontUI/styles/styles/_helpers.scss",
+        "../src/storefrontUI/styles/styles/helpers/_breakpoints.scss",
+        "../src/storefrontUI/styles/styles/helpers/_typography.scss",
+        "../src/storefrontUI/styles/styles/helpers/_layout.scss",
+        "../src/storefrontUI/styles/styles/helpers/_colors.scss",
+        "../src/storefrontUI/styles/styles/helpers/_sizes.scss"
+    ],
+    "names": [],
+    "file": "SfHeading.css"
+}

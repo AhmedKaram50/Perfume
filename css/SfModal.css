@@ -1,0 +1,57 @@
+.sf-modal__container {
+  position: fixed;
+  top: var(--modal-top, 0);
+  right: var(--modal-right, 0);
+  bottom: var(--modal-bottom, 0);
+  left: var(--modal-left, 0);
+  z-index: var(--modal-index, 1);
+  -webkit-transform: var(--modal-transform);
+          transform: var(--modal-transform);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: var(--modal-flex-direction, column);
+          flex-direction: var(--modal-flex-direction, column);
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: var(--modal-width);
+  height: var(--modal-height);
+  border: var(--modal-border);
+  max-height: var(--modal-max-height);
+  background-color: var(--modal-background, var(--c-white));
+}
+
+.sf-modal__container::-webkit-scrollbar {
+  width: 0;
+}
+
+.sf-modal__content {
+  overflow-y: auto;
+  padding: var(--modal-content-padding, var(--spacer-base) var(--spacer-sm));
+  font: var(--modal-content-font, var(--modal-content-font-weight, var(--font-weight--light)) var(--modal-content-font-size, var(--font-size--base))/var(--modal-content-font-line-height, 1.6) var(--modal-content-font-family, var(--font-family--primary)));
+}
+
+.sf-modal__close {
+  position: absolute;
+  right: var(--modal-close-right, var(--spacer-sm));
+  top: var(--modal-close-top, var(--spacer-sm));
+}
+
+@media (min-width: 1024px) {
+  .sf-modal {
+    --modal-width: 29.375rem;
+    --modal-top: 50%;
+    --modal-left: 50%;
+    --modal-bottom: none;
+    --modal-right: none;
+    --modal-transform: translate3d(-50%, -50%, 0);
+    --modal-height: auto;
+    --modal-max-height: 90%;
+    --modal-content-padding: var(--spacer-sm) var(--spacer-lg);
+  }
+}
+/*# sourceMappingURL=SfModal.css.map */

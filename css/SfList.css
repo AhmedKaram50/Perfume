@@ -1,0 +1,15 @@
+.sf-list {
+  list-style: var(--list-list-style, none);
+  padding: var(--list-padding, 0);
+  margin: var(--list-margin, 0);
+}
+
+.sf-list .sf-list__item {
+  margin: var(--list-item-margin, 0);
+  padding: var(--list-item-padding, 0);
+  color: var(--list-item-color, var(--c-text));
+  border: var(--list-item-border, var(--list-item-border-style, solid) var(--list-item-border-color, var(--c-light)));
+  border-width: var(--list-item-border-width, 0);
+  font: var(--list-item-font, var(--list-item-font-weight, var(--font-weight--normal)) var(--list-item-font-size, var(--font-size--base))/var(--list-item-font-line-height, 1.4) var(--list-item-font-family, var(--font-family--secondary)));
+}
+/*# sourceMappingURL=SfList.css.map */

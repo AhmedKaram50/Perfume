@@ -1,0 +1,93 @@
+.sf-arrow {
+  --button-width: 2.75rem;
+  --button-height: 2.75rem;
+  --button-padding: 0 0.625rem;
+  --button-background: var(--c-light);
+  --button-transition: background 150ms linear;
+  --icon-color: var(--c-dark);
+  --button-box-shadow: 0px 4px 4px var(--c-black);
+  --box-shadow-transition-opacity-duration: 150ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: var(--arrow-justify-content, center);
+      -ms-flex-pack: var(--arrow-justify-content, center);
+          justify-content: var(--arrow-justify-content, center);
+}
+
+.sf-arrow:hover {
+  --button-background: var(--c-dark);
+  --icon-color: var(--c-light);
+  --button-box-shadow-opacity: 0.25;
+}
+
+.sf-arrow:active {
+  --button-background: var(--c-link);
+}
+
+.sf-arrow:disabled {
+  --button-background: var(--c-light);
+  --icon-color: var(--c-text-disabled);
+}
+
+.sf-arrow__icon {
+  -webkit-transform: var(--arrow-icon-transform);
+          transform: var(--arrow-icon-transform);
+}
+
+.sf-arrow--long {
+  --button-width: 4.375rem;
+  --button-height: 2.5rem;
+  --button-background: var(--c-text-disabled);
+  --button-transition: transform 150ms linear;
+  --arrow-justify-content: flex-start;
+}
+
+.sf-arrow--long.sf-arrow--right {
+  --arrow-justify-content: flex-end;
+  --arrow-icon-transform: rotate(180deg) scale(0.855, 0.75);
+}
+
+.sf-arrow--long.sf-arrow--right:hover {
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.sf-arrow--transparent {
+  --button-background: transparent;
+  --button-box-shadow: none;
+}
+
+.sf-arrow--transparent:hover {
+  --button-background: transparent;
+  --icon-color: var(--c-dark);
+}
+
+.sf-arrow--transparent:disabled {
+  --button-background: transparent;
+  --icon-color: var(--c-text-disabled);
+}
+
+.sf-arrow--rounded {
+  --button-border-radius: 100%;
+}
+
+.sf-arrow--no-shadow {
+  --button-box-shadow: none;
+}
+
+.sf-arrow--right {
+  --arrow-icon-transform: rotate(180deg);
+}
+
+.sf-arrow--top {
+  --arrow-icon-transform: rotate(90deg);
+}
+
+.sf-arrow--down {
+  --arrow-icon-transform: rotate(270deg);
+}
+/*# sourceMappingURL=SfArrow.css.map */

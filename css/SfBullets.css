@@ -1,0 +1,55 @@
+.sf-bullet {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: var(--bullet-width, var(--bullet-size, 0.5rem));
+  height: var(--bullet-height, var(--bullet-size, 0.5rem));
+  margin: var(--bullet-margin, var(--spacer-2xs));
+  border-radius: var(--bullet-border-radius, 100%);
+  background: var(--bullet-background, var(--c-gray));
+  -webkit-transition: -webkit-transform 150ms linear, -webkit-box-shadow 150ms linear;
+  transition: -webkit-transform 150ms linear, -webkit-box-shadow 150ms linear;
+  transition: transform 150ms linear, box-shadow 150ms linear;
+  transition: transform 150ms linear, box-shadow 150ms linear, -webkit-transform 150ms linear, -webkit-box-shadow 150ms linear;
+  --bullet-box-shadow-opacity: 0;
+}
+
+.sf-bullet::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  -webkit-transition: var(--bullet-box-shadow-transition, opacity var(--bullet-box-shadow-transition-opacity-duration, 200ms) var(--bullet-box-shadow-transition-opacity-timing-function, ease-in-out), box-shadow var(--bullet-box-shadow-transition-box-shadow-duration, 200ms) var(--bullet-box-shadow-transition-box-shadow-timing-function, ease-in-out));
+  transition: var(--bullet-box-shadow-transition, opacity var(--bullet-box-shadow-transition-opacity-duration, 200ms) var(--bullet-box-shadow-transition-opacity-timing-function, ease-in-out), box-shadow var(--bullet-box-shadow-transition-box-shadow-duration, 200ms) var(--bullet-box-shadow-transition-box-shadow-timing-function, ease-in-out));
+  opacity: var(--bullet-box-shadow-opacity);
+  -webkit-box-shadow: var(--bullet-box-shadow, var(--bullet-box-shadow-h-offset, 0px) var(--bullet-box-shadow-v-offset, 4px) var(--bullet-box-shadow-blur, 4px) var(--bullet-box-shadow-spread, 0px) var(--bullet-box-shadow-color, var(--c-black)));
+          box-shadow: var(--bullet-box-shadow, var(--bullet-box-shadow-h-offset, 0px) var(--bullet-box-shadow-v-offset, 4px) var(--bullet-box-shadow-blur, 4px) var(--bullet-box-shadow-spread, 0px) var(--bullet-box-shadow-color, var(--c-black)));
+  will-change: opacity, box-shadow;
+}
+
+.sf-bullet:hover, .sf-bullet.is-active {
+  -webkit-transform: scale3d(1.25, 1.25, 1);
+          transform: scale3d(1.25, 1.25, 1);
+  --bullet-box-shadow-opacity: 0.25;
+}
+
+.sf-bullet.is-active {
+  --bullet-background: var(--c-primary);
+  cursor: default;
+}
+
+.sf-bullets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+/*# sourceMappingURL=SfBullets.css.map */

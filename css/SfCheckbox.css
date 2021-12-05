@@ -1,0 +1,148 @@
+.sf-checkbox {
+  --icon-size: 1.25rem;
+}
+
+.sf-checkbox__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: var(--checkbox-padding);
+  width: var(--checkbox-container-width);
+  cursor: var(--checkbox-cursor, pointer);
+}
+
+.sf-checkbox__checkmark {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: var(--checkbox-display, flex);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-ordinal-group: var(--checkbox-order);
+      -ms-flex-order: var(--checkbox-order);
+          order: var(--checkbox-order);
+  width: var(--checkbox-size, 1.5rem);
+  height: var(--checkbox-size, 1.5rem);
+  border: var(--checkbox-border, var(--checkbox-border-style, solid) var(--checkbox-border-color, var(--c-link)));
+  border-width: var(--checkbox-border-width, 1px);
+  border-radius: var(--checkbox-border-radius);
+  background: var(--checkbox-background, transparent);
+  -webkit-transition: background 150ms linear, border-color 150ms linear;
+  transition: background 150ms linear, border-color 150ms linear;
+}
+
+.has-error .sf-checkbox__checkmark {
+  --checkbox-border-color: var(--c-danger);
+}
+
+.sf-checkbox__checkmark:hover {
+  --checkbox-border-color: var(--c-black);
+}
+
+.has-error .sf-checkbox__checkmark:hover {
+  --checkbox-border-color: var(--c-danger);
+}
+
+.is-disabled .sf-checkbox__checkmark:hover {
+  --checkbox-border-color: var(--c-text-disabled);
+}
+
+.is-disabled .sf-checkbox__checkmark {
+  --checkbox-border-color: var(--c-text-disabled);
+}
+
+.is-disabled .sf-checkbox__checkmark.is-active {
+  --checkbox-background: var(--c-text-disabled);
+}
+
+.has-error .sf-checkbox__checkmark.is-active {
+  --checkbox-border-color: var(--c-danger);
+  --checkbox-background: var(--c-danger);
+}
+
+.sf-checkbox__label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: var(--checkbox-label-margin, 0 0 0 var(--spacer-xs));
+  color: var(--checkbox-label-color, var(--c-link));
+  font: var(--checkbox-font, var(--checkbox-font-weight, var(--font-weight--normal)) var(--checkbox-font-size, var(--font-size--base))/var(--checkbox-font-line-height, 1.6) var(--checkbox-font-family, var(--font-family--primary)));
+  -webkit-transition: color 150ms linear;
+  transition: color 150ms linear;
+}
+
+.sf-checkbox__label:hover {
+  --checkbox-label-color: var(--c-black);
+}
+
+.sf-checkbox--is-disabled .sf-checkbox__label:hover {
+  --checkbox-label-color: var(--c-text-disabled);
+}
+
+.sf-checkbox.is-active {
+  --checkbox-border-color: var(--c-primary);
+  --checkbox-background: var(--c-primary);
+}
+
+.sf-checkbox.is-active.has-error {
+  --checkbox-label-color: var(--c-text);
+}
+
+.sf-checkbox.is-active.has-error {
+  --checkbox-border-color: var(--c-danger);
+  --checkbox-background: var(--c-danger);
+  --checkbox-message-color: var(--c-danger);
+}
+
+.sf-checkbox.is-active.is-disabled {
+  --checkbox-border-color: var(--c-text-disabled);
+  --checkbox-background: var(--c-text-disabled);
+}
+
+.sf-checkbox.is-required {
+  --checkbox-message-color: var(--c-text);
+}
+
+.sf-checkbox.is-required.has-error {
+  --checkbox-message-color: var(--c-danger);
+}
+
+.sf-checkbox.is-disabled {
+  --checkbox-label-color: var(--c-text-disabled);
+  --checkbox-border-color: var(--c-text-disabled);
+}
+
+.sf-checkbox__message {
+  margin: var(--checkbox-message-margin, var(--spacer-2xs) 0 0 0);
+  color: var(--checkbox-message-color, var(--c-danger));
+  font: var(--checkbox-message-font, var(--checkbox-message-font-weight, var(--font-weight--normal)) var(--checkbox-message-font-size, var(--font-size--xs))/var(--checkbox-message-font-line-height, 1.2) var(--checkbox-message-font-family, var(--font-family--secondary)));
+}
+
+.sf-checkbox__message .sf-checkbox__message--info {
+  color: var(--checkbox-message-color, var(--c-primary));
+}
+
+.sf-checkbox input {
+  position: absolute;
+  opacity: 0;
+  left: -1000%;
+  width: 1px;
+  height: 1px;
+}
+
+.sf-checkbox input[style*="outline: none"]:focus + .sf-checkbox__checkmark {
+  outline: none;
+}
+
+.sf-checkbox input:focus + .sf-checkbox__checkmark {
+  outline-color: -webkit-focus-ring-color;
+  outline-style: auto;
+}
+/*# sourceMappingURL=SfCheckbox.css.map */

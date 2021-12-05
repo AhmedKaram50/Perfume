@@ -1,5 +1,7 @@
 <template>
-  <my-table v-if="isProductLoaded"
+  <my-table
+    v-if="isProductLoaded"
+    title="Products Information"
     :headings="[
       'Product Name',
       'Price',
@@ -13,14 +15,18 @@
     <tr v-for="(row, index) in products" :key="index">
       <td>{{ index + 1 }}</td>
       <td>
-        <router-link :to="{path: `/catalog/${row.name}`}">{{ row.name || "aa" }} </router-link>
+        <router-link :to="{ path: `/catalog/${row.name}` }"
+          >{{ row.name || "aa" }}
+        </router-link>
       </td>
       <td>{{ row.price }}</td>
       <td>
         <span>{{ row.quantity }}</span>
       </td>
       <td>
-        <span class="category" v-if="row.category">{{ row.category.name }}</span>
+        <span class="category" v-if="row.category">{{
+          row.category.name
+        }}</span>
         <span v-else>-</span>
       </td>
       <td>
@@ -35,36 +41,36 @@
           header-variant="white"
         >
           <b-dropdown-item>
-        <router-link to="EditProduct">
-            <div
-              class="
-                action-holder
-                edit
-                d-flex
-                justify-content-between
-                align-items-center
-              "
-            >
-              <span>Edit</span>
-              <fa-icon :icon="['fas', 'pen']" />
-            </div>
-          </router-link>
+            <router-link to="EditProduct">
+              <div
+                class="
+                  action-holder
+                  edit
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                <span>Edit</span>
+                <fa-icon :icon="['fas', 'pen']" />
+              </div>
+            </router-link>
           </b-dropdown-item>
           <b-dropdown-divider></b-dropdown-divider>
           <b-dropdown-item>
             <router-link to="EditProduct">
-            <div
-              class="
-                action-holder
-                delete
-                d-flex
-                justify-content-between
-                align-items-center
-              "
-            >
-              <span>Delete</span>
-              <fa-icon :icon="['fas', 'trash-alt']" />
-            </div>
+              <div
+                class="
+                  action-holder
+                  delete
+                  d-flex
+                  justify-content-between
+                  align-items-center
+                "
+              >
+                <span>Delete</span>
+                <fa-icon :icon="['fas', 'trash-alt']" />
+              </div>
             </router-link>
           </b-dropdown-item>
         </b-dropdown>
@@ -79,26 +85,26 @@ import myTable from "../../components/Table.vue";
 
 export default {
   name: "AdminProducts",
-  data () {
+  data() {
     return {
-      color: "#f00"
-    }
+      color: "#f00",
+    };
   },
   components: {
     myTable,
   },
   methods: {
-    ...mapActions(["getProductsFromApi"])
+    ...mapActions(["getProductsFromApi"]),
   },
   computed: {
-    ...mapGetters(["products", "isProductLoaded"])
+    ...mapGetters(["products", "isProductLoaded"]),
   },
-  created () {
-    this.getProductsFromApi("all")
+  created() {
+    this.getProductsFromApi("all");
   },
   mounted() {
-    console.log(this.products)
-  }
+    console.log(this.products);
+  },
 };
 </script>
 

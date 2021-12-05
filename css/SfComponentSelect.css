@@ -1,0 +1,223 @@
+.sf-component-select-option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: var(--component-select-option-padding, var(--spacer-sm));
+  border: var(--component-select-option-border, var(--component-select-option-border-style, solid) var(--component-select-option-border-color, var(--c-light)));
+  border-width: var(--component-select-option-border-width, 1px 0 0 0);
+  background: var(--component-select-option-background);
+  color: inherit;
+  min-height: var(--component-select-height, calc( var(--spacer-base) + var(--spacer-2xs) + var(--component-select-label-font-size, var(--font-size--lg))));
+  font: var(--component-select-option-font, var(--component-select-option-font-weight, var(--font-weight--light)) var(--component-select-option-font-size, var(--font-size--sm))/var(--component-select-option-font-line-height, 1.2) var(--component-select-option-font-family, var(--font-family--primary)));
+}
+
+.sf-component-select-option.is-active {
+  --component-select-option-background: var(--c-light);
+}
+
+@media (min-width: 1024px) {
+  .sf-component-select-option {
+    --component-select-option-padding: var(--spacer-xs);
+  }
+  .sf-component-select-option:hover {
+    --component-select-option-background: rgba(var(--c-gray-base), 0.1);
+  }
+}
+
+.sf-component-select {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: var(--component-select-width);
+  height: var(--component-select-height);
+  padding: var(--component-select-padding, 0 0 calc(var(--font-size--xs) * 1.2) 0);
+  color: var(--component-select-color, var(--c-text));
+  cursor: default;
+}
+
+.sf-component-select__label {
+  position: absolute;
+  top: var(--component-select-label-top, 50%);
+  left: var(--component-select-label-left, 0);
+  color: var(--component-select-label-color, var(--c-secondary-variant));
+  -webkit-transform: var(--component-select-label-transform, translate3d(0, calc(var(--component-select-label-top, 50%) * -1), 0));
+          transform: var(--component-select-label-transform, translate3d(0, calc(var(--component-select-label-top, 50%) * -1), 0));
+  -webkit-transition: var(--component-select-label-transition, top 150ms linear, font-size 150ms linear);
+  transition: var(--component-select-label-transition, top 150ms linear, font-size 150ms linear);
+  font: var(--component-select-label-font, var(--component-select-label-font-weight, var(--font-weight--normal)) var(--component-select-label-font-size, var(--font-size--lg))/var(--component-select-label-font-line-height, 1) var(--component-select-label-font-family, var(--font-family--secondary)));
+}
+
+.sf-component-select__label::after {
+  content: var(--component-select-label-required);
+  color: var(--component-select-label-color, var(--c-primary));
+}
+
+.sf-component-select__chevron {
+  --chevron-position: absolute;
+  display: var(--chevron-display, block);
+  right: var(--spacer-xs);
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+}
+
+.sf-component-select__selected {
+  --product-option-font-size: var(--font-size--lg);
+  --component-select-option-font-size: var(--font-size--lg);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: var(--component-select-selected-align-items, center);
+      -ms-flex-align: var(--component-select-selected-align-items, center);
+          align-items: var(--component-select-selected-align-items, center);
+  -webkit-box-pack: var(--component-select-selected-justify-content, flex-start);
+      -ms-flex-pack: var(--component-select-selected-justify-content, flex-start);
+          justify-content: var(--component-select-selected-justify-content, flex-start);
+  padding: var(--component-select-selected-padding, var(--spacer-sm) var(--spacer-lg) var(--spacer-xs) 0);
+  margin: var(--component-select-margin, 0 0 var(--spacer-xs) 0);
+  background: var(--component-select-background);
+  color: var(--component-select-color, var(--c-text));
+  border: var(--component-select-border, var(--component-select-border-style, solid) var(--component-select-border-color, transparent));
+  border-width: var(--component-select-border-width, 0);
+}
+
+.sf-component-select__dropdown {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: var(--component-select-dropdown-position, fixed);
+  top: var(--component-select-dropdown-top, auto);
+  left: 0;
+  bottom: var(--component-select-dropdown-bottom, 0);
+  z-index: var(--component-select-dropdown-z-index, 1);
+  width: 100%;
+  background: var(--component-select-dropdown-background, var(--c-white));
+  -webkit-box-shadow: var(--component-select-dropdown-box-shadow, 0 4px 11px rgba(var(--c-dark-base), 0.1));
+          box-shadow: var(--component-select-dropdown-box-shadow, 0 4px 11px rgba(var(--c-dark-base), 0.1));
+}
+
+.sf-component-select__options {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: auto;
+}
+
+.sf-component-select__options::-webkit-scrollbar {
+  width: 0;
+}
+
+.sf-component-select__error-message {
+  --component-select-border-color: var(--c-danger);
+  color: var(--component-select-error-message-color, var(--c-danger));
+  min-height: var(--component-select-error-message-height, calc(var(--font-size--xs) * 1.2));
+  font: var(--input-error-message-font, var(--input-error-message-font-weight, var(--font-weight--medium)) var(--input-error-message-font-size, var(--font-size--xs))/var(--input-error-message-font-line-height, 1.2) var(--input-error-message-font-family, var(--font-family--secondary)));
+}
+
+.sf-component-select__cancel {
+  --button-background: var(--c-light);
+  --button-color: var(--c-dark-variant);
+}
+
+.sf-component-select__cancel:hover {
+  --button-background: var(--c-light);
+}
+
+.sf-component-select--underlined {
+  --component-select-border-width: 0 0 1px 0;
+  --component-select-border-color: var(--c-link);
+}
+
+.sf-component-select.is-selected {
+  --component-select-label-top: 0;
+  --component-select-label-font-size: var(--font-size--xs);
+}
+
+.sf-component-select.is-invalid {
+  --component-select-border-color: var(--c-danger);
+}
+
+.sf-component-select.is-active {
+  --chevron-color: var(--c-primary);
+  --component-select-label-color: var(--c-text);
+  --component-select-border-color: var(--c-primary);
+}
+
+.sf-component-select.is-disabled {
+  --chevron-color: var(--c-text-disabled);
+  --component-select-color: var(--c-text-disabled);
+  --component-select-border-color: var(--c-text-disabled);
+  --component-select-label-color: var(--c-text-disabled);
+}
+
+.sf-component-select.is-required {
+  --component-select-label-required: " *";
+}
+
+.sf-component-select--no-chevron {
+  --chevron-display: none;
+}
+
+.sf-component-select-enter-active {
+  -webkit-animation: var(--component-select-animation-enter, ssmobile 150ms);
+          animation: var(--component-select-animation-enter, ssmobile 150ms);
+}
+
+.sf-component-select-leave-active {
+  -webkit-animation: var(--component-select-animation-leave, ssmobile 150ms reverse);
+          animation: var(--component-select-animation-leave, ssmobile 150ms reverse);
+}
+
+@media (min-width: 1024px) {
+  .sf-component-select {
+    --component-select-dropdown-position: absolute;
+    --component-select-dropdown-top: 100%;
+    --component-select-dropdown-bottom: auto;
+    --component-select-animation-enter: ssdesktop 150ms;
+    --component-select-animation-leave: ssdesktop 150ms reverse;
+  }
+}
+
+@-webkit-keyframes ssdesktop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ssdesktop {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes ssmobile {
+  0% {
+    -webkit-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes ssmobile {
+  0% {
+    -webkit-transform: translate(0, 100%);
+            transform: translate(0, 100%);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+/*# sourceMappingURL=SfComponentSelect.css.map */

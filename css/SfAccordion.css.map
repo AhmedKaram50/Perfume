@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,kBAAkB,CAAC;EACjB,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,aAAa;EACxB,mBAAmB,EAAE,MAAM;CA4D5B;;AA3DE,AAAD,0BAAS,CAAC;EACR,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,mDAAmD;EACpE,OAAO,EAAE,sDAAsD;EAC/D,KAAK,EAAE,kCAAkC;EACzC,UAAU,EAAE,uBAAuB;EACnC,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,IAAI;EIJb,MAAM,EAAE,+IAAiE;EACzE,YAAY,EAAE,oDAA2C;EDYzD,IAAI,EAAE,iSAGL;CHOA;;AA1BA,AAqBC,0BArBO,AAqBN,QAAQ,CAAC;EACR,oCAAoC,CAAA,EAAC;EACrC,6BAA6B,CAAA,iBAAC;EAC9B,eAAe,CAAA,iBAAC;CACjB;;AAEF,AAAD,2BAAU,CAAC;EACT,OAAO,EAAE,0EAGR;EACD,KAAK,EAAE,kDAAkD;EI7B3D,MAAM,EAAE,kJAAiE;EACzE,YAAY,EAAE,iDAA2C;EDYzD,IAAI,EAAE,mSAGL;CH2BA;;AACA,AAAD,2BAAU,CAAC;EACT,OAAO,EAAE,2CAA2C;EACpD,IAAI,EAAE,QAAQ;CACf;;AEzCD,MAAM,EAAE,SAAS,EAAE,MAAM;EFb3B,AAAA,kBAAkB,CAAC;IAwDf,+BAA+B,CAAA,mBAAC;IAChC,iCAAiC,CAAA,oBAAC;IAClC,mCAAmC,CAAA,2BAAC;IACpC,oCAAoC,CAAA,EAAC;IACrC,qCAAqC,CAAA,EAAC;IACtC,gCAAgC,CAAA,qBAAC;GAEpC;;;AACD,AACE,aADW,AACV,YAAY,CAAC;EACZ,gCAAgC,CAAA,KAAC;CAClC",
+    "sources": [
+        "../src/storefrontUI/styles/styles/components/organisms/SfAccordion.scss",
+        "../src/storefrontUI/styles/styles/_helpers.scss",
+        "../src/storefrontUI/styles/styles/helpers/_breakpoints.scss",
+        "../src/storefrontUI/styles/styles/helpers/_typography.scss",
+        "../src/storefrontUI/styles/styles/helpers/_layout.scss",
+        "../src/storefrontUI/styles/styles/helpers/_colors.scss",
+        "../src/storefrontUI/styles/styles/helpers/_sizes.scss"
+    ],
+    "names": [],
+    "file": "SfAccordion.css"
+}

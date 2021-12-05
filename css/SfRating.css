@@ -1,0 +1,16 @@
+.sf-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sf-rating__icon {
+  --icon-size: 0.875rem;
+  --icon-color: var(--c-primary);
+  --icon-color-negative: var(--c-gray-variant);
+}
+
+.sf-rating__icon--negative {
+  --icon-color: var(--icon-color-negative);
+}
+/*# sourceMappingURL=SfRating.css.map */

@@ -1,5 +1,6 @@
 <template>
   <my-table
+    title="Categories Information"
     :headings="[
       'Category Name',
       'Products Count',
@@ -17,7 +18,9 @@
       <td>-</td>
       <td>{{ row._id }}</td>
       <td>
-        <span class="category">{{ row.createdAt.split("T")[0].split("-").reverse().join(" / ") }}</span>
+        <span class="category">{{
+          row.createdAt.split("T")[0].split("-").reverse().join(" / ")
+        }}</span>
       </td>
       <td>
         <b-dropdown
@@ -82,11 +85,11 @@ export default {
   computed: {
     ...mapGetters(["categories"]),
   },
-  created () {
+  created() {
     this.getCategoriesFromApi();
-  },    
+  },
   mounted() {
-      console.log(this.categories)
+    console.log(this.categories);
   },
 };
 </script>

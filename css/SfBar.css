@@ -1,0 +1,28 @@
+.sf-bar {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: var(--bar-height, 3.125rem);
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 var(--bar-height, 3.125rem);
+          flex: 0 0 var(--bar-height, 3.125rem);
+  padding: var(--bar-padding, 0 var(--spacer-base));
+  background-color: var(--bar-background, var(--c-light));
+  font: var(--bar-font, var(--bar-font-weight, var(--font-weight--medium)) var(--bar-font-size, var(--font-size--base))/var(--bar-font-line-height, 1.6) var(--bar-font-family, var(--font-family--secondary)));
+}
+
+.sf-bar__icon {
+  --icon-width: 0.875rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+/*# sourceMappingURL=SfBar.css.map */

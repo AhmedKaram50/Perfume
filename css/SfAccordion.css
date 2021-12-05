@@ -1,0 +1,62 @@
+.sf-accordion-item {
+  will-change: height;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.sf-accordion-item__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: var(--accordion-item-header-justify, space-between);
+      -ms-flex-pack: var(--accordion-item-header-justify, space-between);
+          justify-content: var(--accordion-item-header-justify, space-between);
+  padding: var(--accordion-item-header-padding, var(--spacer-sm));
+  color: var(--accordion-item-header-color);
+  -webkit-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+  text-align: left;
+  width: 100%;
+  border: var(--accordion-item-header-border, var(--accordion-item-header-border-style, solid) var(--accordion-item-header-border-color, var(--c-light)));
+  border-width: var(--accordion-item-header-border-width, 0 0 1px 0);
+  font: var(--accordion-item-header-font, var(--accordion-item-header-font-weight, var(--font-weight--medium)) var(--accordion-item-header-font-size, var(--font-size--base))/var(--accordion-item-header-font-line-height, 1.4) var(--accordion-item-header-font-family, var(--font-family--secondary)));
+}
+
+.sf-accordion-item__header.is-open {
+  --accordion-item-header-border-width: 0;
+  --accordion-item-header-color: var(--c-primary);
+  --chevron-color: var(--c-primary);
+}
+
+.sf-accordion-item__content {
+  padding: var(--accordion-item-content-padding, var(--spacer-base) var(--spacer-sm));
+  color: var(--accordion-item-content-color, var(--c-text));
+  border: var(--accordion-item-content-border, var(--accordion-item-content-border-style, solid) var(--accordion-item-content-border-color, var(--c-light)));
+  border-width: var(--accordion-item-content-border-width, 1px 0);
+  font: var(--accordion-item-content-font, var(--accordion-item-content-font-weight, var(--font-weight--light)) var(--accordion-item-content-font-size, var(--font-size--base))/var(--accordion-item-content-font-line-height, 1.6) var(--accordion-item-content-font-family, var(--font-family--primary)));
+}
+
+.sf-accordion-item__chevron {
+  display: var(--accordion-item-chevron-display, none);
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .sf-accordion-item {
+    --accordion-item-header-padding: var(--spacer-xs) 0;
+    --accordion-item-header-font-size: var(--h4-font-size);
+    --accordion-item-header-font-weight: var(--font-weight--normal);
+    --accordion-item-header-border-width: 0;
+    --accordion-item-content-border-width: 0;
+    --accordion-item-content-padding: var(--spacer-base) 0;
+  }
+}
+
+.sf-accordion.has-chevron {
+  --accordion-item-chevron-display: flex;
+}
+/*# sourceMappingURL=SfAccordion.css.map */

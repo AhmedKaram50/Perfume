@@ -1,5 +1,6 @@
 <template>
   <my-table
+    title="Users Information"
     :tableDataObj="allUsers"
     :headings="[
       'name',

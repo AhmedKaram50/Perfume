@@ -1,0 +1,100 @@
+.sf-steps__header {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: var(--steps-border, var(--steps-border-style, solid) var(--steps-border-color, var(--c-light)));
+  border-width: var(--steps-border-width, 0);
+  -webkit-box-shadow: 0px 4px 11px rgba(var(--c-black-base), 0.1);
+          box-shadow: 0px 4px 11px rgba(var(--c-black-base), 0.1);
+}
+
+.sf-steps__step {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--steps-step-background);
+  padding: var(--steps-step-padding, var(--spacer-sm) var(--spacer-2xs));
+  font: var(--step-font, var(--step-font-weight, var(--font-weight--normal)) var(--step-font-size, var(--font-size--base))/var(--step-font-line-height, 1.6) var(--step-font-family, var(--font-family--secondary)));
+  color: var(--steps-step-color, var(--c-link));
+  cursor: var(--steps-step-cursor, pointer);
+}
+
+.sf-steps__step.current, .sf-steps__step.done {
+  --steps-step-color: var(--c-primary);
+  --steps-step-cursor: default;
+  --step-font-weight: var(--font-weight--normal);
+}
+
+.sf-steps__step.is-done {
+  --steps-step-cursor: pointer;
+}
+
+.sf-steps__step.is-disabled {
+  --steps-step-cursor: not-allowed;
+}
+
+.sf-steps__progress {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: var(--steps-progress-bottom, -2px);
+  display: block;
+  width: var(--steps-progress-width, var(--_steps-progress-width));
+  height: var(--steps-progress-height, 2px);
+  background: var(--steps-progress-background, var(--c-primary));
+  -webkit-transform: var(--steps-progress-transform, scale3d(calc(var(--_steps-progress-active-step) - 0.5), 1, 1));
+          transform: var(--steps-progress-transform, scale3d(calc(var(--_steps-progress-active-step) - 0.5), 1, 1));
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  -webkit-transition: var(--steps-progress-transition, transform 150ms ease-in-out);
+  transition: var(--steps-progress-transition, transform 150ms ease-in-out);
+}
+
+.sf-steps__title {
+  text-align: center;
+}
+
+.sf-steps__content {
+  padding: var(--steps-content-padding, var(--spacer-base) 0 0 0);
+}
+
+@media (min-width: 1024px) {
+  .sf-steps {
+    --steps-step-color: var(--c-text-muted);
+  }
+  .sf-steps__header {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    --steps-border-width: 0 0 2px 0;
+  }
+  .sf-steps__step {
+    --steps-step-padding: 0 0 var(--spacer-xs) 0;
+    --step-font-size: var(--font-size--base);
+  }
+  .sf-steps__step.current, .sf-steps__step.done {
+    --steps-step-after-background: var(--c-primary);
+  }
+  .sf-steps__step::after {
+    content: "";
+    position: absolute;
+    border-radius: 100%;
+    bottom: -3.52px;
+    left: 49%;
+    width: 6px;
+    height: 6px;
+    background: var(--steps-step-after-background, transparent);
+  }
+}
+/*# sourceMappingURL=SfSteps.css.map */

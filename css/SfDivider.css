@@ -1,0 +1,9 @@
+.sf-divider {
+  display: var(--divider-display, block);
+  margin: var(--divider-margin);
+  max-width: var(--divider-max-width);
+  width: var(--divider-width);
+  border: var(--divider-border, var(--divider-border-style, solid) var(--divider-border-color, var(--c-light)));
+  border-width: var(--divider-border-width, 1px);
+}
+/*# sourceMappingURL=SfDivider.css.map */

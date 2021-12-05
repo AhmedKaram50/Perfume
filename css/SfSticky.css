@@ -1,0 +1,17 @@
+@media (min-width: 1024px) {
+  .sf-sticky {
+    position: var(--sticky-position, sticky);
+    top: var(--sticky-top, 0);
+    bottom: var(--sticky-bottom, auto);
+  }
+  .sf-sticky--sticky {
+    --sticky-position: fixed;
+    --sticky-top: 0;
+  }
+  .sf-sticky--bound {
+    --sticky-position: absolute;
+    --sticky-top: auto;
+    --sticky-bottom: 0;
+  }
+}
+/*# sourceMappingURL=SfSticky.css.map */

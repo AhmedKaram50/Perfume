@@ -1,0 +1,66 @@
+.sf-alert {
+  --icon-size: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--alert-color);
+  font: var(--alert-font, var(--alert-font-weight, var(--font-weight--normal)) var(--alert-font-size, var(--font-size--base))/var(--alert-font-line-height, 1.6) var(--alert-font-family, var(--font-family--primary)));
+}
+
+.sf-alert__message {
+  margin: var(--alert-message-margin, 0 0 0 var(--spacer-xs));
+}
+
+.sf-alert.color-black {
+  --icon-color: var(--c-dark);
+  --alert-color: var(--c-dark);
+}
+
+.sf-alert.color-white {
+  --icon-color: var(--c-white);
+  --alert-color: var(--c-white);
+}
+
+.sf-alert.color-primary {
+  --icon-color: var(--c-primary);
+  --alert-color: var(--c-primary);
+}
+
+.sf-alert.color-secondary {
+  --icon-color: var(--c-secondary);
+  --alert-color: var(--c-secondary);
+}
+
+.sf-alert.color-light {
+  --icon-color: var(--c-light);
+  --alert-color: var(--c-light);
+}
+
+.sf-alert.color-dark {
+  --icon-color: var(--c-dark);
+  --alert-color: var(--c-dark);
+}
+
+.sf-alert.color-info {
+  --icon-color: var(--c-info);
+  --alert-color: var(--c-info);
+}
+
+.sf-alert.color-success {
+  --icon-color: var(--c-success);
+  --alert-color: var(--c-success);
+}
+
+.sf-alert.color-warning {
+  --icon-color: var(--c-warning);
+  --alert-color: var(--c-warning);
+}
+
+.sf-alert.color-danger {
+  --icon-color: var(--c-danger);
+  --alert-color: var(--c-danger);
+}
+/*# sourceMappingURL=SfAlert.css.map */

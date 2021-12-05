@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai&display=swap');
+:root{
+    --font: 'Almarai', sans-serif;
+    --main-color: #fff;
+    --second-color: radial-gradient(circle, #00b4db, #00a8d1, #009bc6, #008fbb, #0083b0);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: radial-gradient(circle, #00b4db, #00a8d1, #009bc6, #008fbb, #0083b0);
+    font-family: var(--font);
+    color: #fff
+}
+/*===============*/
+
+.game{
+    padding: 10px 300px
+}
+
+.game .information{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3d3d3d;
+    padding: 15px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: #fffa65
+}
+
+.game .the-game{
+    background-color: #3d3d3d;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px
+}
+
+.game .the-game.stop{
+    pointer-events: none
+}
+
+.game .the-game .box{
+    width: 120px;
+    height: 120px;
+    background-color: #fffa65;
+    margin: 8px;
+    border: 2px solid #fff;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 800;
+    transition: transform .5s ease
+}
+
+.game .the-game .box .front,
+.game .the-game .box .back{
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: transform .5s ease
+}
+
+.game .the-game .box .front{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffa65;
+}
+
+.game .the-game .box .front i{
+    font-size: 45px
+}
+
+.game .the-game .box .back{
+    transform: rotateY(180deg);
+}
+
+.game .the-game .box .back img{
+    width: 100%;
+    height: 120px;
+    
+}
+
+.game .the-game .box.flipped,
+.game .the-game .box.right{
+    transform: rotateY(180deg)
+}
+
+.game .the-game .box.flipped .back,
+.game .the-game .box.right .back{
+    transform: rotateY(0deg)
+}
+/*============= End Game =============*/
+/*============= Start Start Screen =============*/
+.game .start-screen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(223, 230, 233, 0.8);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 60px 0;
+    transition: all 0.5s ease
+}
+
+.game .start-screen .title{
+    background-image: radial-gradient(circle, #00b4db, #00a8d1, #009bc6, #008fbb, #0083b0);
+    padding: 15px 40px;
+    font-size: 40px;
+}
+
+.game .start-screen .start input{
+    outline: none;
+    width: 190px;
+    height: 40px;
+    border: 2px solid #00b4db;
+    text-align: center;
+    margin-top: 120px;
+    font-family: var(--font)
+}
+
+.game .start-screen .start button{
+    font-family: var(--font);
+    display: block;
+    width: 120px;
+    height: 120px;
+    font-size: 40px;
+    background-image: radial-gradient(circle, #00b4db, #00a8d1, #009bc6, #008fbb, #0083b0);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 20px auto;
+    color: #fff
+}
+/*============= End Start Screen =============*/
+
+@media(max-width: 576px){
+    .game{
+        padding: 0
+    }
+    .game .the-game .box{
+        width: 67px;
+        height: 67px;
+    }
+    .game .the-game .box .back img{
+        height: 67px;
+    }
+    .game .start-screen .title{
+        font-size: 22px !important
+    }
+    .game .information{
+        font-size: 12px;
+    }
+}

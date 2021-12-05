@@ -1,0 +1,58 @@
+.sf-carousel {
+  position: relative;
+}
+
+.sf-carousel__wrapper {
+  max-width: var(--carousel-width, calc(100% - var(--carousel-controls-size)));
+  padding: var(--carousel-padding);
+  margin: auto;
+  overflow: hidden;
+}
+
+.sf-carousel__slides {
+  margin: 0;
+}
+
+.sf-carousel__controls {
+  position: var(--carousel-controls-position, absolute);
+  top: var(--carousel-controls-top, 50%);
+  left: var(--carousel-controls-left, 0);
+  -webkit-transform: var(--carousel-controls-transform, translate3d(0, -50%, 0));
+          transform: var(--carousel-controls-transform, translate3d(0, -50%, 0));
+  display: var(--carousel-controls-display, none);
+  -webkit-box-pack: var(--carousel-controls-justify-content, space-between);
+      -ms-flex-pack: var(--carousel-controls-justify-content, space-between);
+          justify-content: var(--carousel-controls-justify-content, space-between);
+  width: var(--carousel-controls-width, 100%);
+}
+
+.sf-carousel .glide__track, .sf-carousel .glide__slides, .sf-carousel .glide__slide {
+  overflow: unset;
+}
+
+.sf-carousel .glide__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sf-carousel .glide__slide > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.sf-carousel .glide__slides {
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .sf-carousel {
+    --carousel-controls-size: 15rem;
+    --carousel-controls-display: flex;
+  }
+}
+/*# sourceMappingURL=SfCarousel.css.map */

@@ -1,0 +1,65 @@
+.sf-heading {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: var(--heading-padding, 0 0 var(--spacer-xs) 0);
+  text-align: var(--heading-text-align, center);
+}
+
+.sf-heading__title {
+  margin: var(--heading-title-margin, 0);
+  color: var(--heading-title-color, var(--c-text));
+  font: var(--heading-title-font, var(--heading-title-font-weight, var(--font-weight--semibold)) var(--heading-title-font-size, var(--h1-font-size))/var(--heading-title-font-line-height, 1.6) var(--heading-title-font-family, var(--font-family--secondary)));
+}
+
+.sf-heading__title.h2 {
+  font-size: var(--heading-title-font-size, var(--h2-font-size));
+  font-weight: var(--heading-title-font-weight, var(--font-weight--normal));
+}
+
+.sf-heading__title.h3 {
+  font-size: var(--heading-title-font-size, var(--h3-font-size));
+  font-weight: var(--heading-title-font-weight, var(--font-weight--semibold));
+}
+
+.sf-heading__title.h4 {
+  font-size: var(--heading-title-font-size, var(--h4-font-size));
+  font-weight: var(--heading-title-font-weight, var(--font-weight--medium));
+}
+
+.sf-heading__title.h5 {
+  font-size: var(--heading-title-font-size, var(--h5-font-size));
+  font-weight: var(--heading-title-font-weight, var(--font-weight--normal));
+}
+
+.sf-heading__title.h6 {
+  font-size: var(--heading-title-font-size, var(--h6-font-size));
+  font-weight: var(--heading-title-font-weight, var(--font-weight--normal));
+}
+
+.sf-heading__description {
+  margin: var(--heading-description-margin, var(--spacer-sm) 0 0);
+  color: var(--heading-description-color, var(--c-text));
+  font: var(--heading-description-font, var(--heading-description-font-weight, var(--font-weight--normal)) var(--heading-description-font-size, var(--font-size--base))/var(--heading-description-font-line-height, 1.6) var(--heading-description-font-family, var(--font-family--secondary)));
+}
+
+@media (min-width: 1024px) {
+  .sf-heading {
+    --heading-padding: 0;
+    --heading-border: 0;
+    --heading-text-align: center;
+  }
+}
+
+.sf-heading--underline {
+  border: var(--heading-border, var(--heading-border-style, solid) var(--heading-border-color, var(--c-light)));
+  border-width: var(--heading-border-width, 0 0 1px 0);
+}
+
+.sf-heading--left {
+  --heading-text-align: left;
+}
+
+.sf-heading--right {
+  --heading-text-align: right;
+}
+/*# sourceMappingURL=SfHeading.css.map */

@@ -1,0 +1,90 @@
+.sf-gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: var(--gallery-flex-direction, column);
+          flex-direction: var(--gallery-flex-direction, column);
+}
+
+.sf-gallery__thumbs {
+  display: var(--gallery-thumbs-display, flex);
+  -webkit-box-flex: var(--gallery-thumbs-flex);
+      -ms-flex: var(--gallery-thumbs-flex);
+          flex: var(--gallery-thumbs-flex);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: var(--gallery-thumbs-flex-direction);
+          flex-direction: var(--gallery-thumbs-flex-direction);
+  margin: var(--gallery-thumbs-margin, var(--spacer-xs) 0 0 0);
+  -webkit-box-ordinal-group: var(--gallery-thumbs-order);
+      -ms-flex-order: var(--gallery-thumbs-order);
+          order: var(--gallery-thumbs-order);
+  overflow: auto;
+}
+
+.sf-gallery__thumbs::-webkit-scrollbar {
+  width: 0;
+}
+
+.sf-gallery__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 var(--gallery-thumb-width, 10rem);
+          flex: 0 0 var(--gallery-thumb-width, 10rem);
+  margin: var(--gallery-item-margin, 0 var(--spacer-xs) 0 0);
+  opacity: var(--gallery-item-opacity, 0.5);
+  -webkit-transition: var(--gallery-item-transition, opacity 150ms ease-in-out);
+  transition: var(--gallery-item-transition, opacity 150ms ease-in-out);
+  cursor: var(--gallery-item-cursor, pointer);
+}
+
+.sf-gallery__item:last-child {
+  --gallery-item-margin: 0;
+}
+
+.sf-gallery__item--selected {
+  --gallery-item-opacity: 1;
+  --gallery-item-cursor: default;
+}
+
+.sf-gallery__stage {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: var(--gallery-stage-width, 26.375rem);
+}
+
+.sf-gallery__zoom {
+  position: absolute;
+  left: 50%;
+  top: 0;
+}
+
+.sf-gallery .glide__slide {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.sf-gallery .glide__slides {
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .sf-gallery {
+    --gallery-flex-direction: row;
+    --gallery-thumbs-flex: 0 0 var(--gallery-thumb-width, 10rem);
+    --gallery-thumbs-flex-direction: column;
+    --gallery-thumbs-order: -1;
+    --gallery-thumbs-margin: 0 var(--spacer-xs) 0 0;
+    --gallery-item-margin: 0 0 var(--spacer-xs) 0;
+  }
+  .sf-gallery__item:last-child {
+    --gallery-item-margin: 0;
+  }
+}
+/*# sourceMappingURL=SfGallery.css.map */

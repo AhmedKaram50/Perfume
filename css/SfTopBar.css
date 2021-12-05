@@ -1,0 +1,32 @@
+.sf-top-bar {
+  background-color: var(--top-bar-background, var(--c-light));
+}
+
+.sf-top-bar__container {
+  padding: var(--top-bar-padding, 0 var(--spacer-base));
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: var(--topbar-justify-content, space-between);
+      -ms-flex-pack: var(--topbar-justify-content, space-between);
+          justify-content: var(--topbar-justify-content, space-between);
+  max-width: var(--sf-topbar-width, 77.5rem);
+  height: var(--top-bar-height, 2.5rem);
+  margin: 0 auto;
+  font: var(--bar-font, var(--bar-font-weight, var(--font-weight--normal)) var(--bar-font-size, var(--font-size--sm))/var(--bar-font-line-height, 1.6) var(--bar-font-family, var(--font-family--secondary)));
+}
+
+.sf-top-bar__container, .sf-top-bar__right, .sf-top-bar__left, .sf-top-bar__center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .sf-top-bar {
+    --top-bar-padding: 0;
+  }
+}
+/*# sourceMappingURL=SfTopBar.css.map */

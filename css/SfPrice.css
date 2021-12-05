@@ -1,0 +1,43 @@
+.sf-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: var(--price-flex-wrap, wrap);
+      flex-wrap: var(--price-flex-wrap, wrap);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: var(--price-flex-direction, row);
+          flex-direction: var(--price-flex-direction, row);
+  -webkit-box-align: var(--price-align-items, flex-end);
+      -ms-flex-align: var(--price-align-items, flex-end);
+          align-items: var(--price-align-items, flex-end);
+  -webkit-box-pack: var(--price-justify-content);
+      -ms-flex-pack: var(--price-justify-content);
+          justify-content: var(--price-justify-content);
+}
+
+.sf-price__regular {
+  margin: var(--price-regular-margin, 0);
+  color: var(--price-regular-color, var(--c-text));
+  font: var(--price-regular-font, var(--price-regular-font-weight, var(--font-weight--medium)) var(--price-regular-font-size, var(--font-size--lg))/var(--price-regular-font-line-height, 1.6) var(--price-regular-font-family, var(--font-family--secondary)));
+  -webkit-text-decoration: var(--price-regular-text-decoration, none);
+          text-decoration: var(--price-regular-text-decoration, none);
+}
+
+.sf-price__special {
+  margin: var(--price-special-margin, 0);
+  color: var(--price-special-color, var(--c-text));
+  font: var(--price-special-font, var(--price-special-font-weight, var(--font-weight--medium)) var(--price-special-font-size, var(--font-size--lg))/var(--price-special-font-line-height, 1.6) var(--price-special-font-family, var(--font-family--secondary)));
+  -webkit-text-decoration: var(--price-special-text-decoration, none);
+          text-decoration: var(--price-special-text-decoration, none);
+}
+
+.sf-price__old {
+  margin: var(--price-old-margin, 0 var(--spacer-xs) 0 0);
+  color: var(--price-old-color, var(--c-danger));
+  font: var(--price-old-font, var(--price-old-font-weight, var(--font-weight--normal)) var(--price-old-font-size, var(--font-size--lg))/var(--price-old-font-line-height, 1.6) var(--price-old-font-family, var(--font-family--secondary)));
+  -webkit-text-decoration: var(--price-old-text-decoration, line-through);
+          text-decoration: var(--price-old-text-decoration, line-through);
+  --price-old-font-size: var(--font-size--xs);
+}
+/*# sourceMappingURL=SfPrice.css.map */

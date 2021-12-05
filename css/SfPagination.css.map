@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,cAAc,CAAC;EACb,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CAmCpB;;AAlCE,AAAD,oBAAO,CAAC;EACN,sBAAsB,CAAA,KAAC;EACvB,KAAK,EAAE,mDAAmD;EAC1D,KAAK,EAAE,4BAA4B;EACnC,MAAM,EAAE,6BAA6B;EACrC,MAAM,EAAE,kDAAkD;EGY5D,IAAI,EAAE,wOAGL;CHUA;;AA9BA,AAaC,oBAbK,AAaJ,KAAK,EAAG,0BAAM,CAAC;EACd,uBAAuB,CAAA,SAAC;EACxB,wBAAwB,CAAA,SAAC;CAC1B;;AAhBF,AAiBC,oBAjBK,AAiBJ,KAAK,CAAC;EACL,wBAAwB,CAAA,yBAAC;CAC1B;;AAnBF,AAoBC,oBApBK,AAoBJ,KAAK,CAAC;EACL,wBAAwB,CAAA,yBAAC;CAC1B;;AAtBF,AAuBC,oBAvBK,AAuBJ,QAAQ,CAAC;EACR,uBAAuB,CAAA,cAAC;EACxB,MAAM,EAAE,OAAO;CAChB;;AA1BF,AA2BC,oBA3BK,AA2BJ,MAAM,CAAC;EACN,uBAAuB,CAAA,iBAAC;CACzB;;AEnBH,MAAM,EAAE,SAAS,EAAE,MAAM;EFb3B,AAAA,cAAc,CAAC;IAmCX,wBAAwB,CAAA,mBAAC;GAE5B",
+    "sources": [
+        "../src/storefrontUI/styles/styles/components/molecules/SfPagination.scss",
+        "../src/storefrontUI/styles/styles/_helpers.scss",
+        "../src/storefrontUI/styles/styles/helpers/_breakpoints.scss",
+        "../src/storefrontUI/styles/styles/helpers/_typography.scss",
+        "../src/storefrontUI/styles/styles/helpers/_layout.scss",
+        "../src/storefrontUI/styles/styles/helpers/_colors.scss",
+        "../src/storefrontUI/styles/styles/helpers/_sizes.scss"
+    ],
+    "names": [],
+    "file": "SfPagination.css"
+}

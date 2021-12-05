@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,kBAAkB,CAAC;EACjB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CA2BpB;;AA1BE,AAAD,wBAAO,CAAC;EACN,YAAY,CAAA,iBAAC;EACb,WAAW,CAAA,KAAC;EACZ,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EACvB,MAAM,EAAE,oDAAoD;CAC7D;;AACA,AAAD,yBAAQ,CAAC;EGST,IAAI,EAAE,yRAGL;CHJA;;AACA,AAAD,+BAAc,CAAC;EGAf,IAAI,EAAE,wTAGL;CHKA",
+    "sources": [
+        "../src/storefrontUI/styles/styles/components/molecules/SfCharacteristic.scss",
+        "../src/storefrontUI/styles/styles/_helpers.scss",
+        "../src/storefrontUI/styles/styles/helpers/_breakpoints.scss",
+        "../src/storefrontUI/styles/styles/helpers/_typography.scss",
+        "../src/storefrontUI/styles/styles/helpers/_layout.scss",
+        "../src/storefrontUI/styles/styles/helpers/_colors.scss",
+        "../src/storefrontUI/styles/styles/helpers/_sizes.scss"
+    ],
+    "names": [],
+    "file": "SfCharacteristic.css"
+}

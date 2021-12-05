@@ -1,0 +1,32 @@
+.sf-characteristic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sf-characteristic__icon {
+  --icon-color: var(--c-primary);
+  --icon-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: var(--characteristic-margin, 0 var(--spacer-xs) 0 0);
+}
+
+.sf-characteristic__title {
+  font: var(--characteristic-title-font, var(--characteristic-title-font-weight, var(--font-weight--normal)) var(--characteristic-title-font-size, var(--h5-font-size))/var(--characteristic-title-font-line-height, 1.6) var(--characteristic-title-font-family, var(--font-family--secondary)));
+}
+
+.sf-characteristic__description {
+  font: var(--characteristic-description-font, var(--characteristic-description-font-weight, var(--font-weight--normal)) var(--characteristic-description-font-size, var(--font-size--xs))/var(--characteristic-description-font-line-height, 1.6) var(--characteristic-description-font-family, var(--font-family--secondary)));
+}
+/*# sourceMappingURL=SfCharacteristic.css.map */

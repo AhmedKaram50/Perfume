@@ -1,0 +1,30 @@
+.sf-product-option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font: var(--product-option-font, var(--product-option-font-weight, var(--font-weight--light)) var(--product-option-font-size, var(--font-size--sm))/var(--product-option-font-line-height, normal) var(--product-option-font-family, var(--font-family--primary)));
+}
+
+.sf-product-option__color {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: var(--product-option-size, 1.5rem);
+  height: var(--product-option-size, 1.5rem);
+  margin: var(--product-option-color-margin, 0 var(--spacer-sm) 0 0);
+  border: var(--product-option-border, var(--product-option-border-style, solid) var(--product-option-border-color, var(--c-light)));
+  border-width: var(--product-option-border-width, 0);
+  border-radius: var(--product-option-border-radius);
+}
+
+.sf-product-option__label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+/*# sourceMappingURL=SfProductOption.css.map */

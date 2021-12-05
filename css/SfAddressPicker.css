@@ -1,0 +1,73 @@
+.sf-address {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  border: 1px solid var(--c-light);
+  -webkit-transition: border 150ms linear;
+  transition: border 150ms linear;
+  font: var(--address-font, var(--address-font-weight, var(--font-weight--normal)) var(--address-font-size, var(--font-size--base))/var(--address-font-line-height, 1.6) var(--address-font-family, var(--font-family--primary)));
+  color: var(--c-link);
+}
+
+.sf-address span {
+  display: block;
+}
+
+.sf-address__icon-container {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  position: absolute;
+  right: var(--spacer-sm);
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: background 150ms linear;
+  transition: background 150ms linear;
+}
+
+.sf-address__icon {
+  --icon-color: var(--c-white);
+  --icon-size: 0.875rem;
+}
+
+.sf-address.sf-radio {
+  --radio-content-margin: 0;
+}
+
+.sf-address.sf-radio--is-active {
+  --radio-background: transparent;
+}
+
+.sf-address.sf-radio input[style*="outline: none"]:focus + .sf-address__icon-container {
+  outline: none;
+}
+
+.sf-address.sf-radio input:focus + .sf-address__icon-container {
+  outline-color: -webkit-focus-ring-color;
+  outline-style: auto;
+}
+
+.sf-address.is-active {
+  border: 1px solid var(--c-primary);
+  --icon-color: var(--c-white);
+  --radio-background: var(--c-white);
+}
+
+.sf-address.is-active .sf-address__icon-container {
+  background: var(--c-primary);
+}
+
+@media (min-width: 1024px) {
+  .sf-address {
+    width: 23.375rem;
+  }
+}
+/*# sourceMappingURL=SfAddressPicker.css.map */

@@ -1,0 +1,32 @@
+.sf-add-to-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sf-add-to-cart__button {
+  --button-font-weight: var(--font-weight--semibold);
+  --button-width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sf-add-to-cart__button:disabled {
+  color: var(--c-text-disabled);
+}
+
+.sf-add-to-cart__select-quantity {
+  --add-to-cart-select-quantity-margin: 0 var(--spacer-base) 0 0;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  margin: var(--add-to-cart-select-quantity-margin, 0 0 0 var(--spacer-xs));
+}
+
+@media (min-width: 1024px) {
+  .sf-add-to-cart {
+    --add-to-cart-select-quantity-display: flex;
+  }
+}
+/*# sourceMappingURL=SfAddToCart.css.map */

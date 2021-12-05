@@ -140,10 +140,6 @@ export default {
       if (user) {
         this.setUserId(user.uid);
         this.changeSignStatus(true);
-        console.log(this.isSigned);
-      } else {
-        console.log(this.isSigned);
-        console.log("ssss");
       }
     });
   },

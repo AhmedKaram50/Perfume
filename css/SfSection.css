@@ -1,0 +1,15 @@
+.sf-section {
+  margin: var(--section-margin, calc(var(--spacer-lg) * 2) 0 var(--spacer-lg) 0);
+}
+
+.sf-section__content {
+  margin: var(--section-content-margin, calc(var(--spacer-lg) * 2) 0 0 0);
+}
+
+@media (min-width: 1024px) {
+  .sf-section {
+    --section-margin: var(--spacer-3xl) 0;
+    --section-content-margin: var(--spacer-2xl) 0 0 0;
+  }
+}
+/*# sourceMappingURL=SfSection.css.map */

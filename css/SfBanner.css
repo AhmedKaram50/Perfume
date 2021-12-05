@@ -1,0 +1,97 @@
+.sf-banner {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: var(--banner-display, flex);
+  -webkit-box-pack: var(--banner-justify-content, flex-start);
+      -ms-flex-pack: var(--banner-justify-content, flex-start);
+          justify-content: var(--banner-justify-content, flex-start);
+  width: var(--banner-width, 100%);
+  min-height: var(--banner-height, 21.4375rem);
+  background: var(--banner-background, var(--banner-background-image, var(--_banner-background-image)) var(--banner-background-color, var(--_banner-background-color, transparent)) no-repeat var(--banner-background-position, 0% 0%));
+  background-size: var(--banner-background-size, cover);
+  --banner-background-position: 60%;
+}
+
+.sf-banner__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: var(--banner-align-items, flex-start);
+      -ms-flex-align: var(--banner-align-items, flex-start);
+          align-items: var(--banner-align-items, flex-start);
+  -webkit-box-pack: var(--banner-wrapper-justify-content, flex-start);
+      -ms-flex-pack: var(--banner-wrapper-justify-content, flex-start);
+          justify-content: var(--banner-wrapper-justify-content, flex-start);
+  -ms-flex-direction: var(--banner-wrapper-flex-direction, column);
+      flex-direction: var(--banner-wrapper-flex-direction, column);
+  padding: var(--banner-padding, var(--spacer-xl));
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 var(--banner-wrapper-width, 100%);
+          flex: 0 0 var(--banner-wrapper-width, 100%);
+  text-decoration: none;
+}
+
+.sf-banner__wrapper.sf-button, .sf-banner__wrapper.sf-button:hover, .sf-banner__wrapper.sf-button:active {
+  --button-background: transparent;
+  --button-box-shadow-opacity: 0;
+}
+
+.sf-banner__subtitle {
+  margin: var(--banner-subtitle-margin, 0);
+  color: var(--banner-color, var(--banner-subtitle-color, var(--c-dark-variant)));
+  font: var(--banner-subtitle-font, var(--banner-subtitle-font-weight, var(--font-weight--normal)) var(--banner-subtitle-font-size, var(--font-size--base))/var(--banner-subtitle-font-line-height, 1.4) var(--banner-subtitle-font-family, var(--font-family--secondary)));
+  text-transform: var(--banner-subtitle-text-transform, uppercase);
+}
+
+.sf-banner__title {
+  margin: var(--banner-title-margin, var(--spacer-2xs) 0 0 0);
+  color: var(--banner-color, var(--banner-title-color, var(--c-text)));
+  font: var(--banner-title-font, var(--banner-title-font-weight, var(--font-weight--normal)) var(--banner-title-font-size, var(--h2-font-size))/var(--banner-title-font-line-height, 1.4) var(--banner-title-font-family, var(--font-family--secondary)));
+  text-transform: var(--banner-title-text-transform, uppercase);
+}
+
+.sf-banner__description {
+  display: var(--banner-description-display, none);
+  margin: var(--banner-description-margin, var(--spacer-sm) 0 var(--spacer-base) 0);
+  color: var(--banner-color, var(--banner-description-color, var(--c-text)));
+  text-align: var(--banner-description-text-align, left);
+  font: var(--banner-description-font, var(--banner-description-font-weight, var(--font-weight--light)) var(--banner-description-font-size, var(--font-size--base))/var(--banner-description-font-line-height, 1.6) var(--banner-description-font-family, var(--font-family--primary)));
+}
+
+.sf-banner__call-to-action {
+  --button-color: var(--c-light-variant);
+  display: var(--banner-display-call-to-action, none);
+}
+
+@media (min-width: 1024px) {
+  .sf-banner {
+    --banner-background-image: var(
+      --_banner-background-desktop-image,
+      var(--_banner-background-image)
+    );
+    --banner-wrapper-width: 50%;
+    --banner-description-display: block;
+    --banner-display-call-to-action: block;
+    --banner-title-margin: var(--spacer-sm) 0 0 0;
+    --banner-subtitle-color: var(--c-gray);
+    -webkit-box-align: var(--banner-align-items, center);
+        -ms-flex-align: var(--banner-align-items, center);
+            align-items: var(--banner-align-items, center);
+    min-height: var(--banner-height, 25rem);
+  }
+  .sf-banner__wrapper {
+    pointer-events: none;
+  }
+  .sf-banner__call-to-action {
+    --button-padding: var(--spacer-sm) var(--spacer-xl);
+    pointer-events: auto;
+  }
+  .sf-banner--right {
+    --banner-justify-content: flex-end;
+  }
+}
+/*# sourceMappingURL=SfBanner.css.map */

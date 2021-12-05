@@ -1,0 +1,19 @@
+.sf-link {
+  color: var(--link-color, var(--c-text));
+  font: var(--link-font, var(--link-font-weight, var(--font-weight--medium)) var(--link-font-size, var(--font-size--sm))/var(--link-font-line-height, 1.4) var(--link-font-family, var(--font-family--secondary)));
+  -webkit-text-decoration: var(--link-text-decoration, underline);
+          text-decoration: var(--link-text-decoration, underline);
+}
+
+.sf-link:visited {
+  --link-color: var(--c-link);
+}
+
+.sf-link:hover {
+  --link-color: var(--c-primary);
+}
+
+.sf-link:active {
+  --link-color: var(--c-link);
+}
+/*# sourceMappingURL=SfLink.css.map */

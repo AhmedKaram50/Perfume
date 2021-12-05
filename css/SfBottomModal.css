@@ -1,0 +1,81 @@
+.sf-bottom-modal {
+  position: var(--bottom-modal-position, fixed);
+  width: var(--bottom-modal-width, 100%);
+  top: var(--bottom-modal-top);
+  bottom: var(--bottom-modal-bottom, 0);
+  right: var(--bottom-modal-right, 0);
+  -webkit-transform: var(--bottom-modal-transform);
+          transform: var(--bottom-modal-transform);
+  --characteristic-description-font-size: var(--font-size--base);
+}
+
+@media (max-width: 1023px) {
+  .sf-bottom-modal {
+    --characteristic-description-font-weight: var(--font-weight--semibold);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sf-bottom-modal {
+    --list-item-margin: 0 var(--spacer-sm);
+    --button-text-transform: capitalize;
+    --characteristic-description-font-size: var(--font-size--sm);
+  }
+}
+
+.sf-bottom-modal__container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  padding: var(--bottom-modal-container-padding);
+  background: var(--bottom-modal-background, var(--c-white));
+  font: var(--bottom-modal-container-font, var(--bottom-modal-container-font-weight, var(--font-weight--light)) var(--bottom-modal-container-font-size, var(--font-size--base))/var(--bottom-modal-container-font-line-height, 1.6) var(--bottom-modal-container-font-family, var(--font-family--primary)));
+}
+
+@media (min-width: 1024px) {
+  .sf-bottom-modal__container {
+    height: var(--bottom-modal-height);
+    padding: var(--bottom-modal-container-padding, var(--spacer-base) var(--spacer-2xl));
+  }
+}
+
+.sf-bottom-modal__title {
+  --heading-title-font-weight: var(--font-weight--normal);
+  padding: var(--bottom-modal-title-padding, var(--spacer-sm) var(--spacer-lg));
+  color: var(--bottom-modal-title-color, var(--c-text));
+  text-align: var(--bottom-modal-title-text-align, center);
+}
+
+@media (max-width: 1023px) {
+  .sf-bottom-modal__title {
+    --heading-title-font-size: var(--font-size--xs);
+    --heading-title-font-weight: var(--font-weight--bold);
+  }
+}
+
+.sf-bottom-modal__close {
+  --button-display: none;
+  position: absolute;
+  top: var(--spacer-xs);
+  right: var(--spacer-xs);
+}
+
+@media (min-width: 1024px) {
+  .sf-bottom-modal__close {
+    --button-display: flex;
+  }
+}
+
+.sf-bottom-modal__cancel {
+  --button-display: flex;
+  --button-background: var(--_c-light-primary);
+  --button-color: var(--c-text-muted);
+}
+
+@media (min-width: 1024px) {
+  .sf-bottom-modal__cancel {
+    --button-display: none;
+  }
+}
+/*# sourceMappingURL=SfBottomModal.css.map */

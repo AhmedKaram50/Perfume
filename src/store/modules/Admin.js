@@ -5,7 +5,7 @@ const state = {
   isAdmin: false,
   counts: {
     users: 0,
-    posts: 0,
+    products: 0,
     categories: 0,
     sellsToday: 0,
     totalEarnings: 0,
@@ -37,7 +37,7 @@ const actions = {
     fetch(`https://rocky-oasis-81800.herokuapp.com/product/show?category=all`)
       .then((result) => result.json())
       .then((data) => {
-        commit("setCount", { count: "posts", value: data.products.length });
+        commit("setCount", { count: "products", value: data.products.length });
       });
   },
 

@@ -13,6 +13,7 @@ import addProduct from "../views/dashboard/AddProduct.vue";
 import editProduct from "../views/dashboard/EditProduct.vue";
 import categories from "../views/dashboard/Categories.vue";
 import addCategory from "../views/dashboard/AddCategory.vue";
+// import game from "../game/index.html";
 
 import { getAuth } from "firebase/auth";
 Vue.use(VueRouter);
@@ -85,7 +86,7 @@ const routes = [
   },
   {
     path: "/dashboard/Products",
-    name: "product",
+    name: "products",
     component: adminProducts,
     meta: {
       title: "Product"
@@ -109,7 +110,7 @@ const routes = [
   },
   {
     path: "/dashboard/Categories",
-    name: "Categories",
+    name: "categories",
     component: categories,
     meta: {
       title: "Categories"
@@ -123,6 +124,14 @@ const routes = [
       title: "Add Category"
     }
   },
+  // {
+  //   path: "/game",
+  //   name: "Game",
+  //   component: () => import('../game/index.html'),
+  //   meta: {
+  //     title: "Game"
+  //   }
+  // },
 ];
 
 const router = new VueRouter({

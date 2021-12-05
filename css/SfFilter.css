@@ -1,0 +1,70 @@
+.sf-filter {
+  --checkbox-order: 1;
+  --checkbox-border-radius: 100%;
+  --color-size: 1.5rem;
+  width: 100%;
+  --checkbox-border-color: transparent;
+}
+
+.sf-filter__color {
+  margin: var(--filter-color-margin, 0 var(--spacer-sm) 0 0);
+}
+
+.sf-filter__label {
+  display: var(--filter-label-display, flex);
+  -webkit-box-align: var(--filter-label-align-items, center);
+      -ms-flex-align: var(--filter-label-align-items, center);
+          align-items: var(--filter-label-align-items, center);
+  margin: var(--filter-label-margin, 0);
+  color: var(--filter-label-color, var(--c-link));
+  font: var(--filter-label-font, var(--filter-label-font-weight, var(--font-weight--normal)) var(--filter-label-font-size, var(--font-size--base))/var(--filter-label-font-line-height, 1.4) var(--filter-label-font-family, var(--font-family--primary)));
+  -webkit-text-decoration: var(--filter-label-text-decoration);
+          text-decoration: var(--filter-label-text-decoration);
+  -webkit-transition: -webkit-transform 150ms ease-in-out;
+  transition: -webkit-transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
+  -webkit-transform: var(--filter-label-transform);
+          transform: var(--filter-label-transform);
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+}
+
+.sf-filter__count {
+  display: var(--filter-count-display);
+  margin: var(--filter-count-margin, 0 var(--spacer-sm) 0 auto);
+  color: var(--filter-count-color, var(--c-text-muted));
+  font: var(--filter-count-font, var(--filter-count-font-weight, var(--font-weight--normal)) var(--filter-count-font-size, var(--font-size--base))/var(--filter-count-font-line-height, 1.4) var(--filter-count-font-family, var(--font-family--secondary)));
+}
+
+.sf-filter--active {
+  --filter-count-color: var(--c-primary);
+  --filter-label-color: var(--c-primary);
+}
+
+@media (min-width: 1024px) {
+  .sf-filter {
+    --checkbox-border-radius: 0;
+    --checkbox-border-color: var(--c-text-muted);
+    --checkbox-order: 0;
+    --filter-color-margin: 0;
+    --filter-label-margin: 0 0 0 var(--spacer-xs);
+    --filter-count-margin: 0 0 0 auto;
+    --filter-label-font-size: var(--font-size--sm);
+    --filter-count-font-size: var(--font-size--sm);
+  }
+  .sf-filter.is-active {
+    --filter-label-color: var(--c-text);
+    --filter-count-color: var(--c-text-muted);
+    --checkbox-border-color: var(--c-primary);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sf-filter.is-color {
+    --checkbox-display: none;
+    --filter-label-display: none;
+    --filter-count-display: none;
+  }
+}
+/*# sourceMappingURL=SfFilter.css.map */

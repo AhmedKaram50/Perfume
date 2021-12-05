@@ -1,0 +1,132 @@
+.sf-skeleton {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  background: var(--c-text-disabled);
+  position: relative;
+  overflow: hidden;
+  margin: var(--spacer-xs) 0;
+  z-index: 0;
+}
+
+.sf-skeleton--avatar {
+  border-radius: 100%;
+  width: 6.25rem;
+  height: 6.25rem;
+}
+
+.sf-skeleton--paragraph {
+  height: 1rem;
+}
+
+.sf-skeleton--button {
+  height: 3.125rem;
+  width: 10.5rem;
+}
+
+.sf-skeleton--image {
+  height: 22.625rem;
+  width: 13.5rem;
+}
+
+.sf-skeleton--input {
+  height: 1.875rem;
+}
+
+.sf-skeleton:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-animation: left-to-right 2.5s linear infinite;
+          animation: left-to-right 2.5s linear infinite;
+  background-image: linear-gradient(90deg, var(--c-text-disabled) 0px, var(--c-light) var(--spacer-xl), var(--c-text-disabled) var(--spacer-2xl));
+}
+
+.sf-skeleton--fade:before {
+  -webkit-animation: fade 2.5s linear infinite;
+          animation: fade 2.5s linear infinite;
+  background-image: none;
+  background-color: var(--c-light);
+}
+
+.sf-skeleton--pulsate {
+  -webkit-animation: pulsate 2.5s linear infinite;
+          animation: pulsate 2.5s linear infinite;
+}
+
+.sf-skeleton--pulsate:before {
+  background-image: none;
+}
+
+.sf-skeleton--no-animation:before {
+  -webkit-animation: none;
+          animation: none;
+  background: var(--c-text-disabled);
+}
+
+@-webkit-keyframes left-to-right {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes left-to-right {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@-webkit-keyframes fade {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@-webkit-keyframes pulsate {
+  0%, 100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  50% {
+    -webkit-transform: scaleX(0.95);
+            transform: scaleX(0.95);
+  }
+}
+
+@keyframes pulsate {
+  0%, 100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  50% {
+    -webkit-transform: scaleX(0.95);
+            transform: scaleX(0.95);
+  }
+}
+/*# sourceMappingURL=SfSkeleton.css.map */

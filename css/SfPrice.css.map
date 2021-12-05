@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "mappings": "AAaA,AAAA,SAAS,CAAC;EACR,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,4BAA4B;EACvC,cAAc,EAAE,gCAAgC;EAChD,WAAW,EAAE,kCAAkC;EAC/C,eAAe,EAAE,4BAA4B;CAiB9C;;AAhBE,AAAD,kBAAU,CAAC;EAjBX,MAAM,EAAE,8BAAqD;EAC7D,KAAK,EAAE,yCAAiD;EGkBxD,IAAI,EAAE,uPAGL;EHbD,eAAe,EAAE,0CAA+E;CAU/F;;AACA,AAAD,kBAAU,CAAC;EApBX,MAAM,EAAE,8BAAqD;EAC7D,KAAK,EAAE,yCAAiD;EGkBxD,IAAI,EAAE,uPAGL;EHbD,eAAe,EAAE,0CAA+E;CAa/F;;AACA,AAAD,cAAM,CAAC;EAvBP,MAAM,EAAE,+CAAqD;EAC7D,KAAK,EAAE,uCAAiD;EGkBxD,IAAI,EAAE,mOAGL;EHbD,eAAe,EAAE,8CAA+E;EAsB9F,qBAAqB,CAAA,qBAAC;CACvB",
+    "sources": [
+        "../src/storefrontUI/styles/styles/components/atoms/SfPrice.scss",
+        "../src/storefrontUI/styles/styles/_helpers.scss",
+        "../src/storefrontUI/styles/styles/helpers/_breakpoints.scss",
+        "../src/storefrontUI/styles/styles/helpers/_typography.scss",
+        "../src/storefrontUI/styles/styles/helpers/_layout.scss",
+        "../src/storefrontUI/styles/styles/helpers/_colors.scss",
+        "../src/storefrontUI/styles/styles/helpers/_sizes.scss"
+    ],
+    "names": [],
+    "file": "SfPrice.css"
+}

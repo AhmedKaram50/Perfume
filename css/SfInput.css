@@ -1,0 +1,241 @@
+.sf-input {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: var(--input-width);
+  height: var(--input-height);
+  min-height: var(--input-height, calc( var(--spacer-base) + var(--spacer-2xs) + var(--input-label-font-size, var(--font-size--lg))));
+}
+
+.sf-input__label {
+  position: absolute;
+  display: var(--input-label-display);
+  top: var(--input-label-top, 50%);
+  left: var(--input-label-left);
+  padding: var(--input-label-padding);
+  color: var(--input-label-color, var(--c-link));
+  text-transform: underline;
+  background: var(--input-label-background);
+  -webkit-transform: var(--input-label-transform, translate3d(0, calc(var(--input-label-top, 50%) * -1), 0));
+          transform: var(--input-label-transform, translate3d(0, calc(var(--input-label-top, 50%) * -1), 0));
+  -webkit-transition: var(--input-label-transition, top 150ms linear, font-size 150ms linear);
+  transition: var(--input-label-transition, top 150ms linear, font-size 150ms linear);
+  font: var(--input-label-font, var(--input-label-font-weight, var(--font-weight--normal)) var(--input-label-font-size, var(--font-size--lg))/var(--input-label-font-line-height, 1) var(--input-label-font-family, var(--font-family--secondary)));
+}
+
+.sf-input__label::after {
+  content: var(--input-label-required);
+  color: var(--input-label-color, var(--c-link));
+}
+
+.sf-input__bar {
+  position: relative;
+  display: var(--input-bar-display, block);
+}
+
+.sf-input__bar::before, .sf-input__bar::after {
+  position: absolute;
+  bottom: 0;
+  width: var(--input-bar-width, 0);
+  height: 1px;
+  background: var(--input-bar-background, var(--c-primary));
+  -webkit-transition: width 150ms linear;
+  transition: width 150ms linear;
+  content: "";
+}
+
+.sf-input__bar::before {
+  left: 50%;
+}
+
+.sf-input__bar::after {
+  right: 50%;
+}
+
+.sf-input__error-message {
+  color: var(--input-error-message-color, var(--c-danger));
+  min-height: calc(var(--font-size--xs) * 1.2);
+  font: var(--input-error-message-font, var(--input-error-message-font-weight, var(--font-weight--medium)) var(--input-error-message-font-size, var(--font-size--xs))/var(--input-error-message-font-line-height, 1.2) var(--input-error-message-font-family, var(--font-family--secondary)));
+}
+
+.sf-input__wrapper,
+.sf-input input {
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.sf-input__wrapper {
+  position: relative;
+  margin: var(--input-margin, 0 0 var(--spacer-xs) 0);
+}
+
+.sf-input input {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: var(--input-padding, var(--spacer-sm) 0 var(--spacer-xs) 0);
+  border: var(--input-border, var(--input-border-style, solid) var(--input-border-color, var(--c-link)));
+  border-width: var(--input-border-width, 0 0 1px 0);
+  background: var(--input-background);
+  color: var(--input-color, var(--c-text));
+  font: var(--input-font, var(--input-font-weight, var(--font-weight--normal)) var(--input-font-size, var(--font-size--lg))/var(--input-font-line-height, 1) var(--input-font-family, var(--font-family--secondary)));
+  text-align: var(--input-text-align);
+}
+
+.sf-input input:focus ~ *, .sf-input input:placeholder-shown ~ *, .sf-input input:-webkit-autofill ~ *, .sf-input input:-webkit-autofill:hover ~ *, .sf-input input:-webkit-autofill:focus ~ * {
+  --icon-color: var(--c-primary);
+  --input-password-icon-background: var(--c-primary);
+  --input-label-top: 0;
+  --input-label-color: var(--c-primary);
+  --input-label-font-size: var(--font-size--xs);
+  --input-bar-width: 50%;
+  --input-error-message-color: var(--c-primary);
+}
+
+.sf-input input:required ~ * {
+  --input-label-required: " *";
+}
+
+.sf-input input:disabled {
+  --input-border-color: var(--c-text-disabled);
+  --input-color: var(--c-text-disabled);
+  /* add to provide color on iOS */
+  -webkit-text-fill-color: var(--c-text-disabled);
+}
+
+.sf-input input:disabled ~ * {
+  --icon-color: var(--text-disabled);
+  --input-label-color: var(--c-text-disabled);
+}
+
+.sf-input input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.sf-input input[type="number"]::-webkit-inner-spin-button, .sf-input input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.sf-input input[type="search"] {
+  -webkit-appearance: none;
+}
+
+.sf-input__password-button {
+  --icon-size: 12px;
+  --button-padding: 0;
+  --button-background: transparent;
+  position: absolute;
+  top: var(--input-icon-top, 50%);
+  right: var(--input-icon-right, var(--spacer-xs));
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+}
+
+.sf-input__password-button:hover {
+  --button-background: transparent;
+  --button-box-shadow: none;
+}
+
+.sf-input__password-icon {
+  position: relative;
+}
+
+.sf-input__password-icon.hidden {
+  --input-password-icon-scaleX: 1;
+}
+
+.sf-input__password-icon::after {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: var(--input-password-icon-background, var(--c-black));
+  -webkit-transform: translate3d(0, -50%, 0) rotate(45deg) scaleX(var(--input-password-icon-scaleX, 0));
+          transform: translate3d(0, -50%, 0) rotate(45deg) scaleX(var(--input-password-icon-scaleX, 0));
+  -webkit-transition: -webkit-transform 150ms linear;
+  transition: -webkit-transform 150ms linear;
+  transition: transform 150ms linear;
+  transition: transform 150ms linear, -webkit-transform 150ms linear;
+  content: "";
+}
+
+.sf-input.invalid {
+  --input-label-color: var(--c-danger);
+}
+
+.sf-input.invalid input:focus ~ * {
+  --input-bar-background: var(--c-danger);
+  --input-label-color: var(--c-danger);
+}
+
+.sf-input.has-text,
+.sf-input input[type="date"] ~ *,
+.sf-input input[type="time"] ~ *,
+.sf-input input[type="image"] ~ *,
+.sf-input input[type="file"] ~ * {
+  --input-label-top: 0;
+  --input-label-font-size: var(--font-size--xs);
+}
+
+.sf-input--filled {
+  --input-background: var(--c-light);
+  --input-font-size: var(--font-size--xs);
+  --input-padding: var(--spacer-xs);
+  --input-label-left: var(--spacer-xs);
+  --input-label-font-size: var(--font-size--xs);
+  --input-label-color: var(--c-secondary-variant);
+  --input-label-transition: color 150ms ease;
+  --input-border: none;
+}
+
+.sf-input--filled.has-text {
+  --input-label-display: none;
+}
+
+.sf-input--filled input:focus ~ * {
+  --input-bar-width: unset;
+  --input-label-top: 50%;
+  --input-label-font-size: var(--font-size--xs);
+  --input-label-color: var(--c-text);
+}
+
+.sf-input--outline {
+  --input-label-left: var(--spacer-sm);
+  --input-padding: var(--spacer-xs) var(--spacer-xs) var(--spacer-xs) var(--spacer-sm);
+  --input-border-color: var(--c-secondary-variant);
+  --input-label-background: var(--c-white);
+  --input-label-font-size: var(--font-size-base);
+}
+
+.sf-input--outline.sf-input--has-text {
+  --input-label-top: -25%;
+  --input-label-left: var(--spacer-xs);
+  --input-label-padding: 0 var(--spacer-2xs);
+}
+
+.sf-input--outline.sf-input--invalid {
+  --input-border-color: var(--c-danger);
+  --input-label-color: var(--c-danger);
+}
+
+.sf-input--outline.sf-input--invalid input:focus ~ * {
+  --input-label-color: var(--c-danger);
+}
+
+.sf-input--outline input {
+  --input-border-width: 1px;
+}
+
+.sf-input--outline input:focus ~ * {
+  --input-label-top: -25%;
+  --input-label-left: var(--spacer-xs);
+  --input-label-padding: 0 var(--spacer-2xs);
+  --input-bar-width: 0;
+  --input-label-color: var(--c-secondary-variant);
+}
+/*# sourceMappingURL=SfInput.css.map */

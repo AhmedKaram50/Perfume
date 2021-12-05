@@ -1,0 +1,66 @@
+.sf-review {
+  position: relative;
+  display: var(--review-display, block);
+  max-width: var(--review-max-width, 343px);
+  padding: var(--review-padding, 0 0 8px);
+  border: var(--review-border, var(--review-border-style, solid) var(--review-border-color, var(--c-light)));
+  border-width: var(--review-border-width, 0 0 1px 0);
+}
+
+.sf-review__icon {
+  --icon-size: 1.5rem;
+  --icon-color: var(--c-primary);
+  margin: var(--review-icon-margin, 0 var(--spacer-2xs) 0 0);
+}
+
+.sf-review__author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--review-author-color, var(--c-text));
+  font: var(--review-author-font, var(--review-author-font-weight, var(--font-weight--normal)) var(--review-author-font-size, var(--font-size--base))/var(--review-author-font-line-height, 1.6) var(--review-author-font-family, var(--font-family--secondary)));
+  text-transform: var(--review-author-text-transform, capitalize);
+}
+
+.sf-review__rating {
+  display: var(--review-rating-display, inline-block);
+  --icon-size: 16px;
+}
+
+.sf-review__info {
+  margin: var(--review-info-margin, var(--spacer-xs) 0 0 0);
+}
+
+.sf-review__date {
+  display: var(--review-date-display, block);
+  margin: var(--review-date-margin, var(--spacer-xs) 0 var(--spacer-sm) 0);
+  text-transform: var(--review-date-text-transform, capitalize);
+  color: var(--review-date-color, var(--c-text-muted));
+  font: var(--review-date-font, var(--review-date-font-weight, var(--font-weight--normal)) var(--review-date-font-size, var(--font-size--base))/var(--review-date-font-line-height, 1.6) var(--review-date-font-family, var(--font-family--primary)));
+}
+
+.sf-review__message {
+  display: var(--review-message-display);
+  margin: var(--review-message-margin, var(--spacer-sm) 0);
+  color: var(--review-message-color, var(--c-text));
+  vertical-align: middle;
+  font: var(--review-message-font, var(--review-message-font-weight, var(--font-weight--normal)) var(--review-message-font-size, var(--font-size--base))/var(--review-message-font-line-height, 1.6) var(--review-message-font-family, var(--font-family--primary)));
+}
+
+.sf-review__read-more {
+  margin: var(--review-read-more-margin, 0 0 0 var(--spacer-xs));
+  --button-padding: 0;
+  --button-font-weight: var(--font-weight--medium);
+  --button-font-size: var(--font-size--sm);
+}
+
+@media (min-width: 1024px) {
+  .sf-review {
+    --review-max-width: 33.1875rem;
+    --review-message-display: inline;
+  }
+}
+/*# sourceMappingURL=SfReview.css.map */
